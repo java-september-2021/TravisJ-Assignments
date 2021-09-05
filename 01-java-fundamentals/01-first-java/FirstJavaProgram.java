@@ -10,6 +10,7 @@ public class FirstJavaProgram {
        int age = 33;
        String name = "Travis Jepson";
        String hometown = "Campbell, CA";
+       // WOW! TOKENS ARE SO EASY TO USE! 
 
        System.out.println();
        System.out.println();
