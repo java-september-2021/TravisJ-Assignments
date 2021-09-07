@@ -5,6 +5,7 @@ import java.util.Date;
 // This only HOLDS all the quote methods
 public class Basics 
 {
+    //works
     public int[] count255(int totalCount)
     {
         int[] theArray; 
@@ -17,6 +18,7 @@ public class Basics
        return theArray;
     }
 
+    //works
     public int[] countOdd255(int totalCount)
     {
         int[] theArray; 
@@ -31,6 +33,18 @@ public class Basics
             }
             return theArray;
     }
+
+    public int sumAllNumbersMethod(int incomingNumber)
+    {
+        int totalSum = 0; 
+        for(int i = 1; i <= (incomingNumber+1); i++)
+            {
+            totalSum +=i;
+            }
+            return totalSum;
+    }
+
+    
 
     //Assuming dayPeriod comes from util.Date...
     //Not sure if parameters taken in need to be redefined 

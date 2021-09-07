@@ -10,10 +10,9 @@ public class BasicsTest
         //
         Basics BasicsInstance = new Basics();
 
-
         int[] countTFF =  BasicsInstance.count255(255);  // takes in user number counts them all
         int[] countOddTFF =  BasicsInstance.countOdd255(255); // takes in number and returns odd
-
+        int sumEmAll =  BasicsInstance.sumAllNumbersMethod(255); // takes in number and adds all numbers counting up to that point
 
 
 
