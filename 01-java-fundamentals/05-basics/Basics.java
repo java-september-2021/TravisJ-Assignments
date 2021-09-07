@@ -9,27 +9,27 @@ public class Basics
     {
         int[] theArray; 
         theArray = new int[totalCount];
-        for(int i = 1; i < (totalCount); i++)
-        {
-        theArray[i-1] = i;
-        System.out.println(i);
-        }
-        // CAN ONLY RETURN A SINGLE THING, so make it an array
+        for(int i = 1; i < (totalCount+1); i++)
+            {
+            theArray[i-1] = i;
+            System.out.println(i);
+            }
        return theArray;
     }
 
-    public int countOdd255(int totalCount)
+    public int[] countOdd255(int totalCount)
     {
         int[] theArray; 
         theArray = new int[totalCount];
-        for(int i = 1; i < (totalCount+1); i+=2)
-        {
-            // if (i % 2 != 0) USE FOR OFFICIAL{}
-            System.out.println(i);
-        
-        }
-        // CAN ONLY RETURN A SINGLE THING, so make it an array
-        return totalCount;
+        for(int i = 1; i < (totalCount+1); i++)
+            {
+            theArray[i-1] = i;
+            if(i % 2 != 0)
+                {
+                System.out.println(i);
+                }
+            }
+            return theArray;
     }
 
     //Assuming dayPeriod comes from util.Date...

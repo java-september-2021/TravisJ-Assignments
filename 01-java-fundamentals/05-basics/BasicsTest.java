@@ -11,10 +11,8 @@ public class BasicsTest
         Basics BasicsInstance = new Basics();
 
 
-        int[] countTFF =  BasicsInstance.count255(255);
-
-
-        int[] applyPowerUp =  animalsInstance.strengthPower.bear();
+        int[] countTFF =  BasicsInstance.count255(255);  // takes in user number counts them all
+        int[] countOddTFF =  BasicsInstance.countOdd255(255); // takes in number and returns odd
 
 
 
