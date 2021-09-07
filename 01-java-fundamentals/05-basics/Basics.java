@@ -3,12 +3,17 @@
 import java.util.Date;
 
 // This only HOLDS all the quote methods
-public class AlfredQuotes 
+public class Basics 
 {
-    //No need for code here, this is just a method that returns the following text.
-    public String basicGreeting()
+    public int count255(int totalCount)
     {
-        return "Hello there, its lovely to see you.  How are you today?";
+        for(int i = 0; i < totalCount; i++)
+        {
+        // return i;
+        System.out.println(i);
+        }
+        // CAN ONLY RETURN A SINGLE THING, so make it an array
+        return i;
     }
 
     //Assuming dayPeriod comes from util.Date...

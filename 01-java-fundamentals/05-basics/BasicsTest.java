@@ -1,28 +1,27 @@
 // TRAVIS JEPSON SEPT 2021
-// ALFREDBOT TESTER
+// BasicsInstance TESTER
 
-public class AlfredBotTest 
+public class BasicsTest 
 {
     public static void main(String[] args)
     {
         // This makes an instance that allows you to access all the methods in AlfredQuotes.java
-        // the instance here being alfredBot
+        // the instance here being BasicsInstance
         // IS THIS CORRECT
-        AlfredQuotes alfredBot = new AlfredQuotes();
+        Basics BasicsInstance = new Basics();
 
-        String greetingTest = alfredBot.basicGreeting();
-        String nameTest = alfredBot.guestGreeting("Bobby Ray", "evening");
-        String setTheDateTest = alfredBot.dateAnnouncement(11, 13, 2021);
-        String stringWithAlexisTest = alfredBot.respondBeforeAlexis("Is Alexis the best ever?");
-        String stringWithAlfredTest = alfredBot.respondBeforeAlexis("Where is Alfred? I need a question answered.");
-        String stringWithNothingTest = alfredBot.respondBeforeAlexis("Long ago in a time before I spent money on something that did not have the solution as advertised, I was a bit peeved.");
+        int paintTFF = BasicsInstance.count255(255);  //ADD THE INT HERE TO BE PASSED IN Basics.java
+        // String nameTest = BasicsInstance.guestGreeting("Bobby Ray", "evening");
+        // String setTheDateTest = BasicsInstance.dateAnnouncement(11, 13, 2021);
+        // String stringWithAlexisTest = BasicsInstance.respondBeforeAlexis("Is Alexis the best ever?");
+        // String stringWithAlfredTest = BasicsInstance.respondBeforeAlexis("Where is Alfred? I need a question answered.");
+        // String stringWithNothingTest = BasicsInstance.respondBeforeAlexis("Long ago in a time before I spent money on something that did not have the solution as advertised, I was a bit peeved.");
 
-        System.out.println(greetingTest);
-        System.out.println(greetingTest);
-        System.out.println(nameTest );
-        System.out.println(setTheDateTest);
-        System.out.println(stringWithAlexisTest);
-        System.out.println(stringWithAlfredTest);
-        System.out.println(stringWithNothingTest);
+        System.out.println(paintTFF);
+        // System.out.println(nameTest );
+        // System.out.println(setTheDateTest);
+        // System.out.println(stringWithAlexisTest);
+        // System.out.println(stringWithAlfredTest);
+        // System.out.println(stringWithNothingTest);
     }
 }
