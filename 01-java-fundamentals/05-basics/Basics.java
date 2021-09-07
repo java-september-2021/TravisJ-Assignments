@@ -1,19 +1,35 @@
 // TRAVIS JEPSON SEPT 2021
-// ALFREDBOT
+// BASICS
 import java.util.Date;
 
 // This only HOLDS all the quote methods
 public class Basics 
 {
-    public int count255(int totalCount)
+    public int[] count255(int totalCount)
     {
-        for(int i = 0; i < totalCount; i++)
+        int[] theArray; 
+        theArray = new int[totalCount];
+        for(int i = 1; i < (totalCount); i++)
         {
-        // return i;
+        theArray[i-1] = i;
         System.out.println(i);
         }
         // CAN ONLY RETURN A SINGLE THING, so make it an array
-        return i;
+       return theArray;
+    }
+
+    public int countOdd255(int totalCount)
+    {
+        int[] theArray; 
+        theArray = new int[totalCount];
+        for(int i = 1; i < (totalCount+1); i+=2)
+        {
+            // if (i % 2 != 0) USE FOR OFFICIAL{}
+            System.out.println(i);
+        
+        }
+        // CAN ONLY RETURN A SINGLE THING, so make it an array
+        return totalCount;
     }
 
     //Assuming dayPeriod comes from util.Date...
