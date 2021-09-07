@@ -19,6 +19,7 @@ public class AlfredQuotes
     }
 
     // is this correct?
+    // NOT FOLLOWING THE util.DATE, just using the method
     public String dateAnnouncement(Int month, Int day, Int year)
     {
         return "Greetings! Today's date is " + month + "/" + day + "/" + year ".";
