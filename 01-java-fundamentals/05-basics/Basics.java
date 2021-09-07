@@ -42,9 +42,26 @@ public class Basics
             totalSum +=i;
             }
             return totalSum;
-    }
+    }  // THIS IS NOT RETURNED TO THE TERMINAL, MAKE SURE TO USE SYS.out
 
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     //Assuming dayPeriod comes from util.Date...
     //Not sure if parameters taken in need to be redefined 

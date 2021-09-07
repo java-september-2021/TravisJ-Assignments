@@ -14,7 +14,7 @@ public class BasicsTest
         int[] countOddTFF =  BasicsInstance.countOdd255(255); // takes in number and returns odd
         int sumEmAll =  BasicsInstance.sumAllNumbersMethod(255); // takes in number and adds all numbers counting up to that point
 
-
+        System.out.println(sumEmAll);
 
 
 
