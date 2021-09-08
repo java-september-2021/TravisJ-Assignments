@@ -10,34 +10,43 @@ public class Pizza
 {
     //attributes
     // CHANGE TO PRIVATE SHORTLY??
-        public String name;
-        public String[] toppings;
+    // SO GETTERS AND SETTERS ARE HOW YOU ACCESS THEM
+        private String name;
+        private String[] toppings;
         // public String[] toppings = new String[] = {"Cheese","Sauce"}; // sets default ASK IF CORRECT
         // public ArrayList<String> toppings;  // MORE DYNAMIC SEE LINE 20
-        public char size;
-        public int slices;
-        public String type;
+        private char size;
+        private int slices;
+        private String type;
 
         // keep track of all pizzas sold
         // if this is PRIVATE
         static int numberOfPizzas;
+        
+        // THIS IS FOR cheese empty default pizza 26-33
+        //NOTHING HERE - THIS IS THE BEAN!
+        public Pizza()
+        {
+            numberOfPizzas++;
+        }
 
-// constructor type default
-// public is the access modifier
-    public Pizza(String name, String[] toppings, Char size, String type)
-    {
-        this.name = name;
-        this.toppings = toppings;
-        this.size = size;
-        this.type = type;
-        this.slices = 10;
-        numberOfPizzas++;
-    }
 
-    // constructor new type!
+        //THIS METHOD IS CLASS SPECIFIC
+        // constructor type default
+        // public is the access modifier
+        public Pizza(String name, String[] toppings, char size, String type)
+        {
+            this.name = name;
+            this.toppings = toppings;
+            this.size = size;
+            this.type = type;
+            this.slices = 10;
+            numberOfPizzas++;
+        }
+        //THIS METHOD IS CLASS SPECIFIC
     // public is the access modifier
     // removed TOPPINGS AREA for this constructor
-    public Pizza(String name, Char size, String type)
+    public Pizza(String name, char size, String type)
     {
         this.name = name;
         this.toppings = new String[] {"Cheese", "Pepperoni"};
@@ -48,26 +57,23 @@ public class Pizza
     }
 
     //setters! WATCH LECTURE
+    // SETTERS ARE VOID
     public void setName(String name)
     {
         if(name.equals(""))
         {
-            System.out.println("You must enter a name for your Pizza.")
+            System.out.println("You must enter a name for your Pizza.");
             return;
         }
         this.name = name;
     }
-    public void setToppings(String[] name)
+    public void setToppings(String[] toppings)
     {
         this.toppings = toppings;
     }
-    public void setType(char size)
+    public void setSize(char size)
     {
         this.size = size;
-    }
-    public void setSize(int slices )
-    {
-        this.slices = slices;
     }
     public void setType(String type)
     {
@@ -77,36 +83,37 @@ public class Pizza
     {
         this.slices = slices;
     }
+    // public void setNumberOfPizzas(int totalPizzas )
+    // {
+    //     this.totalPizzas = totalPizzas;
+    // }
 
     //getters
-    public void setName(String name)
-    {
-        if(name.equals(""))
-        {
-            System.out.println("You must enter a name for your Pizza.")
-            return;
-        }
-        this.name = name;
-    }
-    public void setToppings(String[] name)
-    {
-        this.toppings = toppings;
-    }
-    public void setType(char size)
-    {
-        this.size = size;
-    }
-    public void setSize(int slices )
-    {
-        this.slices = slices;
-    }
-    public String getType
-    {
+     public String getName()
+     {
+         return this.name;
+     }
+     public String[] getToppings()
+     {
+        return this.toppings;
+     }
+     public char getSize()
+     {
+         return this.size;
+     }
+     public String getType()
+     {
         return this.type;
-    }
-    public void setSlices(int slices )
+     }
+     public int getSlices()
+     {
+         return this.slices;
+     }
+     // ADDED STATIC
+     public static int getNumberOfPizzas()
     {
-        this.slices = slices;
+        // this.numberOfPizzas;
+        return numberOfPizzas;
     }
 
     
@@ -117,7 +124,8 @@ public class Pizza
 
     public String displayPizza()
     {
-        return String.format("This is a %s with %s toppings %d slices", this.name, Arrays.toString(this.toppings), this.slices)
+        return String.format("This is a %s with %s toppings %d slices", this.name, 
+        Arrays.toString(this.toppings), this.slices);
     }
 
 // THIS METHOD OBJECTS AFFECTS OTHER OBJECTS ATTRIBUTES
@@ -128,7 +136,7 @@ public void pizzaFight(Pizza otherPizza)
     numOfSlices -= 1;
     otherPizza.setSlices(numOfSlices);
 
-    System.out.println(this.name + " just pwnt " + otherPizza.getName() + " and " + otherPizza.getName() + " currently has " + otherPizza.getSlices())
+    System.out.println(this.name + " just pwnt " + otherPizza.getName() + " and " + otherPizza.getName() + " currently has " + otherPizza.getSlices());
 }
 
 
