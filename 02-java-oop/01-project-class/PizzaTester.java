@@ -50,13 +50,19 @@ public class PizzaTester
         String[] meatToppings = {"Sausage","Bacon","Ham"};  // ADD THE TOPPINGS LIKE THIS
         Pizza meatLovers = new Pizza("Meat Lovers Pizza", meatToppings, 'L', "New York");
 
-        System.out.println("Pizza Name: " + meatLovers.getName());
-        System.out.println("Pizza Size: " + meatLovers.getSize());
-        System.out.println("Pizza Toppings: " + Arrays.toString(meatLovers.getToppings()));
+        String[] veggieToppings = {"Grass","Flowers","Lettice","Leaves"};  
+        Pizza veggiePizza = new Pizza("Veggie", veggieToppings, 'S', "Thin Crust");
+
+        System.out.print("Pizza Name: " + meatLovers.getName() + "   ");
+        System.out.print("Pizza Size: " + meatLovers.getSize() + "   ");
+        System.out.println("Pizza Toppings: " + Arrays.toString(meatLovers.getToppings())+ "\n");
+
+        System.out.println("Pizza Name: " + veggiePizza.getName());
+        System.out.println("Pizza Size: " + veggiePizza.getSize());
+        System.out.println("Pizza Toppings: " + Arrays.toString(veggiePizza.getToppings())+ "\n");
 
         //CHECK TOTAL PIZZAS MADE        
-        System.out.println("Total Pizzas Made: " + Pizza.getNumberOfPizzas());
+        System.out.println("Total Pizzas Made: " + Pizza.getNumberOfPizzas()+ "\n");
         System.out.println(Pizza.advertise());
-
     }
 }

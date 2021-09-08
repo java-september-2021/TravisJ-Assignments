@@ -30,7 +30,6 @@ public class Pizza
             numberOfPizzas++;
         }
 
-
         //THIS METHOD IS CLASS SPECIFIC
         // constructor type default
         // public is the access modifier
@@ -46,6 +45,7 @@ public class Pizza
         //THIS METHOD IS CLASS SPECIFIC
     // public is the access modifier
     // removed TOPPINGS AREA for this constructor
+    // this will take over for DEFAUL
     public Pizza(String name, char size, String type)
     {
         this.name = name;
