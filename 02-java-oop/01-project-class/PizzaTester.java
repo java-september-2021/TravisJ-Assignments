@@ -24,6 +24,18 @@ public class PizzaTester
 
         System.out.println("Pizza Name: " + cheese.name);
         System.out.println("Pizza Size: " + cheese.size);
-        System.out.println("Pizza Toppings; " + Arrays.toString(cheese.toppings));
+        System.out.println("Pizza Toppings: " + Arrays.toString(cheese.toppings));
+
+        Pizza meatLovers = new Pizza("Meat Lovers Pizza", new String[]{"Sausage","Bacon","Ham"}, 'L', "New York");
+    
+
+        System.out.println("Pizza Name: " + meatLovers.name);
+        System.out.println("Pizza Size: " + meatLovers.size);
+        System.out.println("Pizza Toppings: " + Arrays.toString(meatLovers.toppings));
+
+        //CHECK TOTAL PIZZAS MADE        
+        System.out.println("Total Pizzas Made: " + Pizza.numberOfPizzas);
+
+        
     }
 }
