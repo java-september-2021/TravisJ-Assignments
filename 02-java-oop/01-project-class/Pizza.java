@@ -3,6 +3,7 @@
 // Lecture 9/7/21
 import java.util.Date;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 // This is a METHOD
 public class Pizza 
@@ -56,31 +57,80 @@ public class Pizza
         }
         this.name = name;
     }
-
-    public void setToppings(String name)
+    public void setToppings(String[] name)
     {
         this.toppings = toppings;
     }
-
+    public void setType(char size)
+    {
+        this.size = size;
+    }
+    public void setSize(int slices )
+    {
+        this.slices = slices;
+    }
+    public void setType(String type)
+    {
+        this.type = type;
+    }
     public void setSlices(int slices )
     {
         this.slices = slices;
     }
 
-    public void setType(String type)
+    //getters
+    public void setName(String name)
     {
-        this.type = type;
+        if(name.equals(""))
+        {
+            System.out.println("You must enter a name for your Pizza.")
+            return;
+        }
+        this.name = name;
+    }
+    public void setToppings(String[] name)
+    {
+        this.toppings = toppings;
+    }
+    public void setType(char size)
+    {
+        this.size = size;
+    }
+    public void setSize(int slices )
+    {
+        this.slices = slices;
+    }
+    public String getType
+    {
+        return this.type;
+    }
+    public void setSlices(int slices )
+    {
+        this.slices = slices;
     }
 
+    
+    public static String advertise()
+    {
+        return "EYYYY we got some Pizza ova here!";
+    }
+
+    public String displayPizza()
+    {
+        return String.format("This is a %s with %s toppings %d slices", this.name, Arrays.toString(this.toppings), this.slices)
+    }
+
+// THIS METHOD OBJECTS AFFECTS OTHER OBJECTS ATTRIBUTES
+
+public void pizzaFight(Pizza otherPizza)
+{
+    int numOfSlices = otherPizza.getSlices();
+    numOfSlices -= 1;
+    otherPizza.setSlices(numOfSlices);
+
+    System.out.println(this.name + " just pwnt " + otherPizza.getName() + " and " + otherPizza.getName() + " currently has " + otherPizza.getSlices())
+}
 
 
-// Stuff you can do
-    // Eat()
 
-    // display()
-
-    // cook()
-    // {
-
-    // }
 }

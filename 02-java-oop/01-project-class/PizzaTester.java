@@ -28,14 +28,14 @@ public class PizzaTester
 
         Pizza meatLovers = new Pizza("Meat Lovers Pizza", new String[]{"Sausage","Bacon","Ham"}, 'L', "New York");
     
-
         System.out.println("Pizza Name: " + meatLovers.name);
         System.out.println("Pizza Size: " + meatLovers.size);
         System.out.println("Pizza Toppings: " + Arrays.toString(meatLovers.toppings));
 
         //CHECK TOTAL PIZZAS MADE        
         System.out.println("Total Pizzas Made: " + Pizza.numberOfPizzas);
+        System.out.println(Pizza.advertise());
 
-        
+
     }
 }
