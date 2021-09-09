@@ -14,6 +14,8 @@ public class PizzaTester
         // the instance here being BasicsInstance
         //
 
+// QUESTION - what is a new type called?  an INSTANCE??
+
         //OLD WAY WHEN public
         // Pizza cheese = new Pizza();
         // cheese.name = "Cheese Pizza";

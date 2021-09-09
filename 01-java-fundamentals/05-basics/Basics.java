@@ -45,11 +45,11 @@ public class Basics
     }  // THIS IS NOT RETURNED TO THE TERMINAL, MAKE SURE TO USE SYS.out
 
     //
-    public int[] customUserArray(int usersArray[])
+    public int[] customUserArray(int[] usersArray)
     {
         int[] theArray; 
-        theArray = new int[usersArray];
-        for(int i = 1; i < (usersArray+1); i++)
+        theArray = new int[usersArray.length];
+        for(int i = 1; i < (usersArray.length+1); i++)
             {
             theArray[i-1] = i;
             System.out.println(i);
