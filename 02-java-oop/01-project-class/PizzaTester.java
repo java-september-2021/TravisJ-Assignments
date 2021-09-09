@@ -46,14 +46,20 @@ public class PizzaTester
         System.out.println("Pizza Toppings: " + Arrays.toString(cheese.getToppings()));
 
         // ADD THE ARRAY WITHT HE SQUARE BRACKETS
-        // WATCH THE DAMN LECTURE TO FIX THIS
-        // Pizza meatLovers = new Pizza("Meat Lovers Pizza", String[] meatToppings = {"Sausage","Bacon","Ham"}, 'L', "New York");
-    
+        // Pizza meatLovers = new Pizza("Meat Lovers Pizza", String[] meatToppings {"Sausage","Bacon","Ham"}, 'L', "New York");
+
         String[] meatToppings = {"Sausage","Bacon","Ham"};  // ADD THE TOPPINGS LIKE THIS
         Pizza meatLovers = new Pizza("Meat Lovers Pizza", meatToppings, 'L', "New York");
 
         String[] veggieToppings = {"Grass","Flowers","Lettice","Leaves"};  
         Pizza veggiePizza = new Pizza("Veggie", veggieToppings, 'S', "Thin Crust");
+
+        // String[] spinachToppings = {"Grass","Flowers","Lettice","Leaves"};  // DONT NEED ANYMORE
+        // NOW YOU CAN MAKE THE ARRAY IN ONE LINE!
+        Pizza spinachSpecial = new Pizza("Spinach", new String[] {"Spinach","More Spinach","Cheese","Olives"}, 'L', "Thick Crust", 12);
+        
+        // THIS WILL NOT WORK BASED ON CURRENT constructor
+        // Pizza spinachSpecial = new Pizza(new String[] {"Spinach","More Spinach","Cheese","Olives"}, "Spinach", 'L', "Thick Crust");
 
         System.out.print("Pizza Name: " + meatLovers.getName() + "   ");
         System.out.print("Pizza Size: " + meatLovers.getSize() + "   ");

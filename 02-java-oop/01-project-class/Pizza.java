@@ -19,8 +19,13 @@ public class Pizza
         private int slices;
         private String type;
 
+        // ALL OF THESE ATTRIBUTES ARE EMPTY BUT THEIR TYPE IS SOLID
+        // all of these can be assigned a default value, THESE ARE OVERRIDDEN BY THE CONSTRUCTOR(s)
+
         // keep track of all pizzas sold
         // if this is PRIVATE
+        // THIS IS STATIC BECAUSE IT IS BELONGING OT THE CLASS RATHER THAN THE OBJECT 
+        // keep track of more general attributes
         static int numberOfPizzas;
         
         // THIS IS FOR cheese empty default pizza 26-33
@@ -30,18 +35,19 @@ public class Pizza
             numberOfPizzas++;
         }
         // MAKE SURE THIS IS ACCURATELY CALLED ETC
-
+        // its this.ATTRIBuTE because it links in the given situation?
 
         //THIS METHOD IS CLASS SPECIFIC
         // AKA A constructor type default
         // public is the access modifier
-        public Pizza(String name, String[] toppings, char size, String type)
+        // THIS IS FOR THE SPECIFIC CONSTRUCTOR
+        public Pizza(String name, String[] toppings, char size, String type, int slices)
         {
             this.name = name;
             this.toppings = toppings;
             this.size = size;
             this.type = type;
-            this.slices = 10;
+            this.slices = slices;
             numberOfPizzas++;
         }
         //THIS METHOD IS CLASS SPECIFIC
@@ -57,6 +63,17 @@ public class Pizza
         this.slices = 10;
         numberOfPizzas++;
     }
+
+    public Pizza(String name, char size, String type)
+    {
+        this.name = name;
+        this.toppings = new String[] {"Cheese", "Pepperoni"};
+        this.size = size;
+        this.type = type;
+        this.slices = 10;
+        numberOfPizzas++;
+    }
+
 
     //setters! WATCH LECTURE
     // SETTERS ARE VOID
@@ -132,15 +149,12 @@ public class Pizza
 
 // THIS METHOD OBJECTS AFFECTS OTHER OBJECTS ATTRIBUTES
 
-public void pizzaFight(Pizza otherPizza)
-{
-    int numOfSlices = otherPizza.getSlices();
-    numOfSlices -= 1;
-    otherPizza.setSlices(numOfSlices);
+    public void pizzaFight(Pizza otherPizza)
+    {
+        int numOfSlices = otherPizza.getSlices();
+        numOfSlices -= 1;
+        otherPizza.setSlices(numOfSlices);
 
-    System.out.println(this.name + " just pwnt " + otherPizza.getName() + " and " + otherPizza.getName() + " currently has " + otherPizza.getSlices());
-}
-
-
-
+        System.out.println(this.name + " just pwnt " + otherPizza.getName() + " and " + otherPizza.getName() + " currently has " + otherPizza.getSlices());
+    }
 }
