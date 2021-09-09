@@ -16,7 +16,8 @@ public class BasicsTest
         int sumEmAll =  BasicsInstance.sumAllNumbersMethod(255); // takes in number and adds all numbers counting up to that point
         System.out.println(sumEmAll);
         
-        int[] customArrayInstance =  BasicsInstance.customUserArray([1,2,3,4,5,6,7,8,9,0,8,6,5,4,4,6,78,8,5,1337,9001]);  // takes in user number counts them all
+        int userArray = {1,2,3,4,5,6,7,8,9,0,8,6,5,4,4,6,78,8,5,1337,9001};
+        int[] customArrayInstance =  BasicsInstance.customUserArray(userArray);  // takes in user number counts them all
 
      
 

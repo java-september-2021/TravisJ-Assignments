@@ -29,9 +29,11 @@ public class Pizza
         {
             numberOfPizzas++;
         }
+        // MAKE SURE THIS IS ACCURATELY CALLED ETC
+
 
         //THIS METHOD IS CLASS SPECIFIC
-        // constructor type default
+        // AKA A constructor type default
         // public is the access modifier
         public Pizza(String name, String[] toppings, char size, String type)
         {
