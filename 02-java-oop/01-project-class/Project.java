@@ -5,156 +5,89 @@ import java.util.Date;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-// This is a METHOD
 public class Project 
 {
-    //attributes
-    // CHANGE TO PRIVATE SHORTLY??
-    // SO GETTERS AND SETTERS ARE HOW YOU ACCESS THEM
         private String name;
-        private String[] toppings;
-        // public String[] toppings = new String[] = {"Cheese","Sauce"}; // sets default ASK IF CORRECT
-        // public ArrayList<String> toppings;  // MORE DYNAMIC SEE LINE 20
-        private char size;
-        private int slices;
-        private String type;
+        private String description;
+        private double initialCost;
 
-        // ALL OF THESE ATTRIBUTES ARE EMPTY BUT THEIR TYPE IS SOLID
-        // all of these can be assigned a default value, THESE ARE OVERRIDDEN BY THE CONSTRUCTOR(s)
-
-        // keep track of all pizzas sold
-        // if this is PRIVATE
-        // THIS IS STATIC BECAUSE IT IS BELONGING OT THE CLASS RATHER THAN THE OBJECT 
-        // keep track of more general attributes
-        static int numberOfPizzas;
-        
-        // THIS IS FOR cheese empty default pizza 26-33
-        //NOTHING HERE - THIS IS THE BEAN!
-        public Pizza()
+        // Static to track of project total
+        static int numberOfProjects;
+       
+        // Java Bean and To Track Number of Projects
+        public Project()
         {
-            numberOfPizzas++;
+            numberOfProjects++;
         }
-        // MAKE SURE THIS IS ACCURATELY CALLED ETC
-        // its this.ATTRIBuTE because it links in the given situation?
-
-        //THIS METHOD IS CLASS SPECIFIC
-        // AKA A constructor type default
-        // public is the access modifier
-        // THIS IS FOR THE SPECIFIC CONSTRUCTOR
-        public Pizza(String name, String[] toppings, char size, String type, int slices)
+        
+        // Constructor 1
+        public Project(String name, String description, double initialCost)
         {
             this.name = name;
-            this.toppings = toppings;
-            this.size = size;
-            this.type = type;
-            this.slices = slices;
-            numberOfPizzas++;
+            this.description = description;
+            this.initialCost = initialCost;
+            numberOfProjects++;
         }
-        //THIS METHOD IS CLASS SPECIFIC
-    // public is the access modifier
-    // removed TOPPINGS AREA for this constructor
-    // this will take over for DEFAUL
-    public Pizza(String name, char size, String type)
-    {
-        this.name = name;
-        this.toppings = new String[] {"Cheese", "Pepperoni"};
-        this.size = size;
-        this.type = type;
-        this.slices = 10;
-        numberOfPizzas++;
-    }
+        
+        // Constructor 2
+        public Project(String name)
+        {
+            this.name = name;
+            this.description = "No description provided.  This must be TOP SECRET.";
+            numberOfProjects++;
+        }
 
-    public Pizza(String name, char size, String type)
-    {
-        this.name = name;
-        this.toppings = new String[] {"Cheese", "Pepperoni"};
-        this.size = size;
-        this.type = type;
-        this.slices = 10;
-        numberOfPizzas++;
-    }
-
-
-    //setters! WATCH LECTURE
-    // SETTERS ARE VOID
+    // Setters
     public void setName(String name)
     {
         if(name.equals(""))
         {
-            System.out.println("You must enter a name for your Pizza.");
+            System.out.println("You must enter a name for your project.  Please try again.");
             return;
         }
         this.name = name;
     }
-    public void setToppings(String[] toppings)
+    public void setDescription(String description)
     {
-        this.toppings = toppings;
+        if(name.equals(""))
+        {
+            System.out.println("You must enter a description for your project.  Please try again.");
+            return;
+        }
+        this.description = description;
     }
-    public void setSize(char size)
+    public void setInitialCost(double initialCost)
     {
-        this.size = size;
+        if(name.equals(""))
+        {
+            System.out.println("Please provide a cost estimate for your project.");
+            return;
+        }
+        this.initialCost = initialCost;
     }
-    public void setType(String type)
-    {
-        this.type = type;
-    }
-    public void setSlices(int slices )
-    {
-        this.slices = slices;
-    }
-    // public void setNumberOfPizzas(int totalPizzas )
-    // {
-    //     this.totalPizzas = totalPizzas;
-    // }
-
-    //getters
+   
+    // Getters
      public String getName()
      {
          return this.name;
      }
-     public String[] getToppings()
+     public String getDescription()
      {
-        return this.toppings;
+        return this.description;
      }
-     public char getSize()
+     public double getInitialCost()
      {
-         return this.size;
+         return this.initialCost;
      }
-     public String getType()
-     {
-        return this.type;
-     }
-     public int getSlices()
-     {
-         return this.slices;
-     }
+     
      // ADDED STATIC
-     public static int getNumberOfPizzas()
+     public static int getNumberOfProjects()
     {
-        // this.numberOfPizzas;
-        return numberOfPizzas;
+        return numberOfProjects;
     }
 
-    
-    public static String advertise()
+    public static String elivatorPitch()
     {
-        return "EYYYY we got some Pizza ova here!";
-    }
-
-    public String displayPizza()
-    {
-        return String.format("This is a %s with %s toppings %d slices", this.name, 
-        Arrays.toString(this.toppings), this.slices);
-    }
-
-// THIS METHOD OBJECTS AFFECTS OTHER OBJECTS ATTRIBUTES
-
-    public void pizzaFight(Pizza otherPizza)
-    {
-        int numOfSlices = otherPizza.getSlices();
-        numOfSlices -= 1;
-        otherPizza.setSlices(numOfSlices);
-
-        System.out.println(this.name + " just pwnt " + otherPizza.getName() + " and " + otherPizza.getName() + " currently has " + otherPizza.getSlices());
+        return "This project is called: " + this.name + this.description;
     }
 }

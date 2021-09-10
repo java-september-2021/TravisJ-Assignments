@@ -8,52 +8,33 @@ public class ProjectTest
 
     public static void main(String[] args)
     {
-       
-        Pizza cheese = new Pizza();
-        cheese.setName("Cheese Pizza");
-            String[] cheezeArray = {"Cheese","Sauce"};
-            cheese.setToppings(cheezeArray);
-        cheese.setSize('S'); 
-        cheese.setSlices(10);
-        cheese.setType("Pan");
+        Project shadowHat = new Project();
+        shadowHat.setName("Shadow Hat Network");
+        shadowHat.setDescription("A fun socal experiment.");
+        shadowHat.setInitialCost(980000.33); 
 
+        System.out.println("Project Name: " + shadowHat.getName());
+        System.out.println("Project Description: " + shadowHat.getDescription());
+        System.out.println("Project Projected Initial Cost: " + shadowHat.getInitialCost());
 
-        // cheese.toppings.add("Pepper Jack");
-
-        // IS THIS DEAD SINCE THE CONSTRUCTOR IS NOW SET? ^
-
-        // Because thesea private you now use getName, etc etc
-        // Make sure when using the getName to ADD two parenthesees
-        System.out.println("Pizza Name: " + cheese.getName());
-        System.out.println("Pizza Size: " + cheese.getSize());
-        System.out.println("Pizza Toppings: " + Arrays.toString(cheese.getToppings()));
-
-        // ADD THE ARRAY WITHT HE SQUARE BRACKETS
-        // Pizza meatLovers = new Pizza("Meat Lovers Pizza", String[] meatToppings {"Sausage","Bacon","Ham"}, 'L', "New York");
-
-        String[] meatToppings = {"Sausage","Bacon","Ham"};  // ADD THE TOPPINGS LIKE THIS
-        Pizza meatLovers = new Pizza("Meat Lovers Pizza", meatToppings, 'L', "New York");
-
-        String[] veggieToppings = {"Grass","Flowers","Lettice","Leaves"};  
-        Pizza veggiePizza = new Pizza("Veggie", veggieToppings, 'S', "Thin Crust");
-
-        // String[] spinachToppings = {"Grass","Flowers","Lettice","Leaves"};  // DONT NEED ANYMORE
-        // NOW YOU CAN MAKE THE ARRAY IN ONE LINE!
-        Pizza spinachSpecial = new Pizza("Spinach", new String[] {"Spinach","More Spinach","Cheese","Olives"}, 'L', "Thick Crust", 12);
+        Project firstFlight = new Project("First Flight", "Raise enough money to launch over 9000 paper airplanes all at once.", 9001.00);
+        Project quakeHour = new Project("Quake Hour");
+        Project echoPhoenix = new Project("Echo Phoenix", "Hear the echo and rise again.  Stronger, faster, better.", 1337133766.11);
         
-        // THIS WILL NOT WORK BASED ON CURRENT constructor
-        // Pizza spinachSpecial = new Pizza(new String[] {"Spinach","More Spinach","Cheese","Olives"}, "Spinach", 'L', "Thick Crust");
+        System.out.print("Project Name: " + firstFlight.getName() + "   ");
+        System.out.print("Project Description: " + firstFlight.getSize() + "   ");
+        System.out.println("Project Cost: " + firstFlight.getToppings()+ "\n");
 
-        System.out.print("Pizza Name: " + meatLovers.getName() + "   ");
-        System.out.print("Pizza Size: " + meatLovers.getSize() + "   ");
-        System.out.println("Pizza Toppings: " + Arrays.toString(meatLovers.getToppings())+ "\n");
+        System.out.print("Project Name: " + quakeHour.getName() + "   ");
+        System.out.print("Project Description: " + quakeHour.getSize() + "   ");
+        System.out.println("Project Cost: " + quakeHour.getToppings() + "\n");
 
-        System.out.println("Pizza Name: " + veggiePizza.getName());
-        System.out.println("Pizza Size: " + veggiePizza.getSize());
-        System.out.println("Pizza Toppings: " + Arrays.toString(veggiePizza.getToppings())+ "\n");
 
-        //CHECK TOTAL PIZZAS MADE        
-        System.out.println("Total Pizzas Made: " + Pizza.getNumberOfPizzas()+ "\n");
-        System.out.println(Pizza.advertise());
+        System.out.println("Project Name: " + echoPhoenix.getName());
+        System.out.println("Project Description: " + echoPhoenix.getSize());
+        System.out.println("Project Cost: " + echoPhoenix.getToppings() + "\n");
+
+        //CHECK TOTAL PROJECTS MADE        
+        System.out.println("Total Projects Made: " + Project.getNumberOfProjects()+ "\n");
+        System.out.println(Project.elivatorPitch());
     }
-}
