@@ -3,9 +3,13 @@
 
 //ABSTRACT - this is the blueprint for ALL HUMANS outside the mamal class?
 // CONNECTS TO human ABSTRACT CLASS
+// TRAVIS IS THE OBJECT that COMES OFF THE HUMAN OBJECT
 public class Travis extends Human
 {
-    public Matthew()
+    
+    
+    // CONSTRUCTOR
+    public Travis()
     {
         super("Has some smarts", true, true);
     }
@@ -14,6 +18,8 @@ public class Travis extends Human
         System.out.println("Sleep is for the weak!  I don't want to....zzzzz...");
     }
 
+
+    // METHODS 
     public abstract void eat();
     {
         System.out.println("Nom I loves me some good eats.");

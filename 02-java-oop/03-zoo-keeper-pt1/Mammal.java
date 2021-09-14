@@ -3,17 +3,19 @@
 import java.util.Date;
 
 // This is a METHOD
+// This does not connect to the aminal class
 // REMEMBER TO ADD THROUGH IMPLIMENTS
 public class Mammal implements Attackable
 {
 
     // CHANGE THIS FROM PRIVATE to PROTECTED to allow for calling this.species in the GORILLA FILE
+    // for the public or protected clss
     protected String species;
     protected int health;
 
-
     // CHILD CLASSES THAT TAKE IN ATTRIBUTES OF THE PARENT CLASSES
-    public Animal(String species, int health)
+    // access MODIFIER for each ATTRIBUTE ... aka THIS
+    public Mammal(String species, int health)
     {
         this.type = type;
         this.strength = strength;
