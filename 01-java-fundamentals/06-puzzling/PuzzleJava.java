@@ -4,6 +4,8 @@
 import java.util.Random;
 import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 public class PuzzleJava 
 {
@@ -11,7 +13,7 @@ public class PuzzleJava
     {
        
         
-        
+
 
     }
 }
