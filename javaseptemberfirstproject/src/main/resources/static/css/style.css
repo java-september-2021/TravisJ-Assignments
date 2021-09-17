@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+.building 
+{
+	background: green;
+	border: radius 10px, thickness 3px;
+}
