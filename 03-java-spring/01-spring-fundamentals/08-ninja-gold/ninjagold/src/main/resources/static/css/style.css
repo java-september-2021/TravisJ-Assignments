@@ -31,6 +31,106 @@
 	text-align: center;
 }
 
+.containerBasic 
+{
+	background: #6ea4be;
+	/* background: #f5ff90; cool yellow */
+	padding: 20px;
+	border-radius: 50px;
+	border: 0px;
+	font-weight: bold;
+	margin: 20px;
+	/* display: flex; */
+	align-content: center;
+	text-align: center;
+}
+
+.farm 
+{
+	background: #753e08;
+	/* background: #f5ff90; cool yellow */
+	padding: 20px;
+	color: #ffffff;
+	border-radius: 50px;
+	border: 0px;
+	font-weight: bold;
+	margin: 20px;
+	/* display: flex; */
+	align-content: center;
+	text-align: center;
+}
+
+.cave 
+{
+	background: #203649;
+	/* background: #f5ff90; cool yellow */
+	padding: 20px;
+	color: #ffffff;
+	border-radius: 50px;
+	border: 0px;
+	font-weight: bold;
+	margin: 20px;
+	/* display: flex; */
+	align-content: center;
+	text-align: center;
+}
+
+.house 
+{
+	background: #58313f;
+	/* background: #f5ff90; cool yellow */
+	padding: 20px;
+	color: #ffffff;
+	border-radius: 50px;
+	border: 0px;
+	font-weight: bold;
+	margin: 20px;
+	/* display: flex; */
+	align-content: center;
+	text-align: center;
+}
+
+.casino 
+{
+	background: #432a68;
+	/* background: #f5ff90; cool yellow */
+	padding: 20px;
+	color: #ffffff;
+	border-radius: 50px;
+	border: 0px;
+	font-weight: bold;
+	margin: 20px;
+	/* display: flex; */
+	align-content: center;
+	text-align: center;
+}
+.spa 
+{
+	background: #124548;
+	padding: 20px;
+	color: #ffffff;
+	border-radius: 50px;
+	border: 0px;
+	font-weight: bold;
+	margin: 20px;
+	/* display: flex; */
+	align-content: center;
+	text-align: center;
+}
+.dragonsLair 
+{
+	background: #470400;
+	padding: 20px;
+	color: #ffffff;
+	border-radius: 50px;
+	border: 0px;
+	font-weight: bold;
+	margin: 20px;
+	/* display: flex; */
+	align-content: center;
+	text-align: center;
+}
+
 .entryContainer
 {
 	border-radius: 50px;
