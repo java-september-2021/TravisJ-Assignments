@@ -2,8 +2,11 @@
 
 .pagestyle 
 {
-	background: rgb(25, 59, 15);
+	background: rgb(130, 177, 126);
 	border: radius 10px, thickness 3px;
+	font-family: helvetica;
+	align-content: center;
+	text-align: center;
 }
 
 .buttonStyle 
@@ -13,22 +16,8 @@
 	border-radius: 50px;
 	border: 0px;
 	font-weight: bold;
-	background:#78c551;
+	background:#f0eb20;
 	color: black;
-}
-
-.containerBasic 
-{
-	background: #6ea4be;
-	/* background: #f5ff90; cool yellow */
-	padding: 20px;
-	border-radius: 50px;
-	border: 0px;
-	font-weight: bold;
-	margin: 20px;
-	/* display: flex; */
-	align-content: center;
-	text-align: center;
 }
 
 .containerBasic 
@@ -48,14 +37,14 @@
 .farm 
 {
 	background: #753e08;
-	/* background: #f5ff90; cool yellow */
+	width: 25%;
 	padding: 20px;
 	color: #ffffff;
 	border-radius: 50px;
 	border: 0px;
 	font-weight: bold;
 	margin: 20px;
-	/* display: flex; */
+	display: inline-block;
 	align-content: center;
 	text-align: center;
 }
@@ -63,14 +52,14 @@
 .cave 
 {
 	background: #203649;
-	/* background: #f5ff90; cool yellow */
+	width: 25%;
 	padding: 20px;
 	color: #ffffff;
 	border-radius: 50px;
 	border: 0px;
 	font-weight: bold;
 	margin: 20px;
-	/* display: flex; */
+	display: inline-block;
 	align-content: center;
 	text-align: center;
 }
@@ -78,14 +67,14 @@
 .house 
 {
 	background: #58313f;
-	/* background: #f5ff90; cool yellow */
+	width: 25%;
 	padding: 20px;
 	color: #ffffff;
 	border-radius: 50px;
 	border: 0px;
 	font-weight: bold;
 	margin: 20px;
-	/* display: flex; */
+	display: inline-block;
 	align-content: center;
 	text-align: center;
 }
@@ -93,40 +82,42 @@
 .casino 
 {
 	background: #432a68;
-	/* background: #f5ff90; cool yellow */
+	width: 30%;
 	padding: 20px;
 	color: #ffffff;
 	border-radius: 50px;
 	border: 0px;
 	font-weight: bold;
 	margin: 20px;
-	/* display: flex; */
+	display: inline-block;
 	align-content: center;
 	text-align: center;
 }
 .spa 
 {
 	background: #124548;
+	width: 30%;
 	padding: 20px;
 	color: #ffffff;
 	border-radius: 50px;
 	border: 0px;
 	font-weight: bold;
 	margin: 20px;
-	/* display: flex; */
+	display: inline-block;
 	align-content: center;
 	text-align: center;
 }
 .dragonsLair 
 {
 	background: #470400;
+	width: 30%;
 	padding: 20px;
 	color: #ffffff;
 	border-radius: 50px;
 	border: 0px;
 	font-weight: bold;
 	margin: 20px;
-	/* display: flex; */
+	display: inline-block;
 	align-content: center;
 	text-align: center;
 }
@@ -140,6 +131,30 @@
 	color: white;
 }
 
+.activityWindow
+{
+	width:100%;
+	overflow-y: auto;
+	max-height: 25%;
+	min-height: 20%;
+}
+
+.activityContainer 
+{
+	background: #003402;
+	width: 80%;
+	padding: 20px;
+	color: #ffffff;
+	border-radius: 50px;
+	border: 0px;
+	font-weight: bold;
+	margin: 20px;
+	display: inline-block;
+	align-content: center;
+	text-align: center;
+}
+
+
 ::placeholder 
 { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #ffffff;
@@ -147,3 +162,10 @@
   padding-left: 10px;
   font-family: helvetica;
 }
+
+
+
+
+
+
+

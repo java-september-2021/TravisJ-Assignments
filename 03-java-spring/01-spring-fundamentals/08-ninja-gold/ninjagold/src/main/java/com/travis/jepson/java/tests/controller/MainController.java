@@ -1,5 +1,6 @@
 package com.travis.jepson.java.tests.controller;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,9 +19,16 @@ public class MainController
 		return "index.jsp";
 		}
 		
+		// USE viewModel to get from back end to front end
+		// KEY and VALUE
+		// THIS MODEL ONLY WORKS FOR gold.jsp
+		//
+		// SESSION stores info on users computer its a Global Hashmap
 		@GetMapping("/")		
-		public String gold() 
+		public String gold(Model viewModel) 
 			{
+				// USED in c tag h2 => REFERENCED as USER
+				viewModel.addAttribute("user", "Sir Matt");
 				return "gold.jsp";
 			}
 		

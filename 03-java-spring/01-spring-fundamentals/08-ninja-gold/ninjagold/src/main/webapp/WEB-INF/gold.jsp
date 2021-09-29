@@ -9,11 +9,11 @@
 		<link rel="stylesheet" href="/css/style.css">
 	</head>
 
-<c:out value="${user}"/> <!-- his use is awesomePerson -->
-<body>
+
+<body class="pagestyle">
 	<div>	
 		<h1>Ninja Gold Game</h1>
-		<h2>Choose your adventure, test your luck & skill.</h2>
+		<h2>Choose your adventure <c:out value="${user}"/>, test your luck & skill.</h2>
 		
 		<p>Your current gold:</p>
 		<!-- Locations: FARM, CAVE, HOUSE and CASINO -->
@@ -24,7 +24,7 @@
 				<!-- THIS TELLS WHAT SPECIFICALLY TO CALL WHEN
 				USING THE /findGold in the MainController.java -->
 				<input type="hidden" name="building" value="farm">
-				<button>Search!</button>
+				<button class="buttonStyle">Search!</button>
 			</form>
 		</div>
 		<div class="cave">
@@ -34,7 +34,7 @@
 				<!-- THIS TELLS WHAT SPECIFICALLY TO CALL WHEN
 				USING THE /findGold in the MainController.java -->
 				<input type="hidden" name="building" value="cave">
-				<button>Search Under a Rock!</button>
+				<button class="buttonStyle">Search Under a Rock!</button>
 			</form>
 		</div>
 		<div class="house">
@@ -44,7 +44,7 @@
 				<!-- THIS TELLS WHAT SPECIFICALLY TO CALL WHEN
 				USING THE /findGold in the MainController.java -->
 				<input type="hidden" name="building" value="house">
-				<button>Search Couch Cushions!</button>
+				<button class="buttonStyle">Explore Couch Cushions!</button>
 			</form>
 		</div>
 		<div class="casino">
@@ -54,7 +54,7 @@
 				<!-- THIS TELLS WHAT SPECIFICALLY TO CALL WHEN
 				USING THE /findGold in the MainController.java -->
 				<input type="hidden" name="building" value="casino">
-				<button>Gamble!</button>
+				<button class="buttonStyle">Gamble!</button>
 			</form>
 		</div>
 		<div class="spa">
@@ -64,7 +64,7 @@
 				<!-- THIS TELLS WHAT SPECIFICALLY TO CALL WHEN
 				USING THE /findGold in the MainController.java -->
 				<input type="hidden" name="building" value="spa">
-				<button>Relax...</button>
+				<button class="buttonStyle">Relax... for a Price</button>
 			</form>
 		</div>	
 		<div class="dragonsLair">
@@ -74,9 +74,14 @@
 				<!-- THIS TELLS WHAT SPECIFICALLY TO CALL WHEN
 				USING THE /findGold in the MainController.java -->
 				<input type="hidden" name="building" value="dragonsLair">
-				<button>Brave the DRAGON!</button>
+				<button class="buttonStyle">Brave the DRAGON!</button>
 			</form>
 		</div>	
+		
+		<div class="activityContainer">
+		<h2>Your Adventure Log: </h2>
+		</div>
+		
 			
 			
 			
