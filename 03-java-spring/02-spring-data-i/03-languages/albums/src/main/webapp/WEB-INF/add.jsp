@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>FIRST SPRING BOOT SEPT 2021 - index.jsp page</title>
+<title>Add Your Custom Album!</title>
 <link rel="stylesheet" href="/css/style.css">
 </head>
 

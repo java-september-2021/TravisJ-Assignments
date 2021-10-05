@@ -3,6 +3,7 @@ package com.travis.jepson.java.tests.models;
 // MAKE SURE THE DATE IS util.date
 import java.util.Date;
 
+// SOMETIMES THESE VALUES ARE HIDDEN
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,21 +20,45 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import com.sun.istack.NotNull;
 
-
 // COMMAND + SHITF + O to auto add these
+// ALWAYS IMPORT from java.persistence.Table ** SEE ABOVE **
 @Entity
-@Table(name="albums")
+@Table(name="albums")  // PLURAL here at table
+
+
+// WHEN ADDING THIS MODELS INITIALLY --- select ADD => new PACKAGE
+// WHEN CREATING THIS FILE, select ADD => new CLASS - - - - WHEN ADDING TO THE .models setup
+
 public class Album 
 {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	// CURRENT ATTRIBUTES of this class =>
+	// private Long id;
+	// private String albumName;
+	// private String artistName;
+	// private Integer year;
+	// private Date createdAt;
+	// private Date updatedAt;
+	
+	// TESTING * ADD RAW SQL * =>
+	// REMEMBER these are then changed to name_name etc
+	// id is automatically generated
+	// INSERT INTO 'albums' (album_name, artist_name, year) VALUES ("The Way", "Fastball", 1998);
+	// TRY without quotes because SQL IS fffffs
+	// INSERT INTO albums (album_name, artist_name, year) VALUES ("The Way", "Fastball", 1998);
+	
+	
+	
+	// in SQL call from this class ALL =>
+	//SELECT * FROM albums;
+
+	
 	
 	// THESE ANNOTATIONS SET THE VALIDATION PARAMETERS
 	
+	@Id // the ID is the primary key
+	@GeneratedValue(strategy = GenerationType.IDENTITY)  // this incriments the ID ** VERY IMPORTANT **
+	private Long id;  // very important to set as long
 	
-	
-	// ADD ANNOTATION
 	// AFFECTS ALBUM NAME
 	@Size(min=2, max=200)
 	private String albumName;
@@ -41,8 +66,8 @@ public class Album
 	// THIS IS FOR NOT 
 	
 //	@NotEmpty // BUT spaces are still there
-	@NotBlank // use this so it accoutns for spaces
-	private String artistName;
+	@NotBlank // use this so it accounts for blank spaces
+	private String artistName;  //his is BAND NAME
 	
 	// THIS IS FOR INTEGER so its notNULL for numbers
 	// LOOK AT THE MIN AND MAX for custom messages you want it to not be just size etc
@@ -52,9 +77,7 @@ public class Album
 	@Range(min=1800, max= 99999)
 	private Integer year;
 	
-	
-	@Column(updatable=false)
-	// ENABLE WITH JAVA.UTIL.date
+	@Column(updatable=false)  // ENABLE WITH JAVA.UTIL.date
 	@DateTimeFormat(pattern="yyyy,MM,DD HH:mm:ss")
 	private Date createdAt;
 	
@@ -77,10 +100,7 @@ public class Album
 		this.updatedAt = new Date();
 	}
 	
-	
-	
-	// KEEP THIS BLANK
-	// JAVA BEAN
+	// KEEP THIS BLANK - - - - JAVA BEAN
 	public Album()
 	{
 		
@@ -116,8 +136,5 @@ public class Album
 
 	public void setYear(Integer year) {
 		this.year = year;
-	}
-	
-
-	
+	}	
 }

@@ -14,7 +14,7 @@
 	<body class="pagestyle">
 	
 	<div class="containerBasic">
-		<h1>The Record Albums!</h1>
+		<h1>Record Albums!</h1>
 		<p>The place to be.</p>
 	
 		<h2>Check out our exclusive content library!</h2>
