@@ -5,9 +5,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="/css/style.css">
-	<title>TITLE HERE.</title>
+<meta charset="UTF-8">
+<title>1337 Jokes for all to enjoy.</title>
 </head>
 <body>
 
