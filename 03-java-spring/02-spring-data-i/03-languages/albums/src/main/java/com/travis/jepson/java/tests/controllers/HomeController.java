@@ -24,9 +24,14 @@ public class HomeController
 	
 	
 	// use MODEL to get from back end to front end!
+	// this goes through repo, model, database to get and show on index.jsp
+	//
+	//  THIS IS WHAT WE LOOP THROUGH FOR THE DISPLAY
+	//
 	@GetMapping("/")
 	public String index(Model viewModel)
 	{
+		viewModel.addAttribute("allAlbums", this.aService.getAllAlbums());
 		return "index.jsp";
 	}
 }

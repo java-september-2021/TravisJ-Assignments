@@ -18,39 +18,41 @@
 		<p>The place to be.</p>
 	
 		<h2>Check out our exclusive content library!</h2>
-		<p>It has the best of the best.</p>
+		<p>The "Who's that" of the Music World.</p>
 	</div>
 	
 	<table>
-		<tr>
-			<th>ID Number: </th>
-			<th>Album Name: </th>
-			<th>Band Name: </th>
-			<th>Year: </th>
-		</tr>
-		<c:forEach items="${allAlbums}" var="album">
+		<thead>
 			<tr>
-				<th>${album.id}</th>
-				<th>${album.albumName} </th>
-				<th>${album.bandName}</th>
-				<th>${album.year}</th>
+				<th>ID</th>
+				<th>Album Name</th>
+				<th>Band Name</th>
+				<th>Year</th>
 			</tr>
-		</c:forEach>
+			<c:forEach items="${allAlbums}" var="album">
+				<tr>
+					<td>${album.id}</td>
+					<td>${album.albumName}</td>
+					<td>${album.artistName}</td>
+					<td>${album.year}</td>
+					
+				</tr>
+			</c:forEach>
+		</thead>
 	</table>
 	
-	<div class="containerBasic">
-		<h3>Here is some Java:</h3>
-		<p><c:out value="  2 + 4 = ${2 + 4}"/></p>
-		<p><c:out value="${1337 + 9001}"/></p>
-	</div>
+	<%-- <div class="containerBasic">
+		<c:forEach items="${allAlbums}" var="album">
+		</c:forEach>
+	</div> --%>
 	
-	<div class="containerBasic">
+<!-- 	<div class="containerBasic">
 		<form action="/tellJoke" method="post">
 		<input type="text" name="name" placeholder="Your Name" class="entryContainer"><br><br>
 		<textarea name="joke" placeholder="Tell a joke!" class="entryContainer"></textarea><br><br>
 		<button class="buttonStyle">Submit Joke</button>
 		</form>
-	</div>
+	</div> -->
 	
 	</body>
 </html>

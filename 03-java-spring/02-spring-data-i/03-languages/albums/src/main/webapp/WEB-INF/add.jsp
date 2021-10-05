@@ -10,7 +10,8 @@
 		<link rel="stylesheet" href="/css/style.css">
 	</head>
 
-<!-- THIS IS WHERE THE USER WILL ADD
+<!-- 
+THIS IS WHERE THE USER WILL ADD
 ALL added DATA IS VALIDATED through the MODELS package
 In this case Album.java
  -->
