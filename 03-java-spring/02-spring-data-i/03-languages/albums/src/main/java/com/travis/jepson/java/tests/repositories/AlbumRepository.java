@@ -17,5 +17,11 @@ import com.travis.jepson.java.tests.models.Album;
 public interface AlbumRepository  extends CrudRepository< Album , Long>   // THIS TAKES IN THE TYPE Class => Album, and the PRIMARY KEY TYPE => Long
 {
 	// REMEMBER TO IMPORT THIS AS => java.util.List
-	List<Album> findAll(); // Just like SELECT * FROM albums
+	// JPA translates this into SQL queries, its super good at filtering
+	List<Album> findAll(); // Just like SELECT * FROM albums in SQL
+	
+	//
+	//
+	//  RETREVAL DOES NOT HAPPEN HERE => thats in .services
+	
 }
