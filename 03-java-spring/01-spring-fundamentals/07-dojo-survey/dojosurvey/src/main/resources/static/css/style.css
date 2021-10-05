@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+.pagestyle 
+{
+	background: rgb(25, 59, 15);
+	border: radius 10px, thickness 3px;
+}
+
+.buttonStyle 
+{
+	background: white;
+	padding: 20px;
+	border-radius: 50px;
+	border: 0px;
+	font-weight: bold;
+	background:#78c551;
+	color: black;
+}
+
+.containerBasic 
+{
+	background: #6ea4be;
+	/* background: #f5ff90; cool yellow */
+	padding: 20px;
+	border-radius: 50px;
+	border: 0px;
+	font-weight: bold;
+	margin: 20px;
+	/* display: flex; */
+	align-content: center;
+	text-align: center;
+}
+
+.entryContainer
+{
+	border-radius: 50px;
+	border: 0px;
+	padding: 10px;
+	background:#4b4a4b;
+	color: white;
+}
+
+::placeholder 
+{ /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #ffffff;
+  opacity: 1; /* Firefox */
+  padding-left: 10px;
+  font-family: helvetica;
+}
