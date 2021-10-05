@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 // This is a METHOD
 
-// CONVERT FROM PIZZA TO BANK ACCOUNT
+// CONVERT FROM BankAccount TO BANK ACCOUNT
 public class BankAccount 
 {
    
@@ -18,42 +18,42 @@ public class BankAccount
         private String type;
 
        // set to number of accounts
-        static int numberOfPizzas;
+        static int numberOfAccounts;
         
         
-        public Pizza()
+        public BankAccount()
         {
-            numberOfPizzas++;
+            numberOfAccounts++;
         }
         
-        public Pizza(String name, String[] toppings, char size, String type, int slices)
+        public BankAccount(String name, String[] toppings, char size, String type, int slices)
         {
             this.name = name;
             this.toppings = toppings;
             this.size = size;
             this.type = type;
             this.slices = slices;
-            numberOfPizzas++;
+            numberOfAccounts++;
         }
        
-    public Pizza(String name, char size, String type)
+    public BankAccount(String name, char size, String type)
     {
         this.name = name;
         this.toppings = new String[] {"Cheese", "Pepperoni"};
         this.size = size;
         this.type = type;
         this.slices = 10;
-        numberOfPizzas++;
+        numberOfAccounts++;
     }
 
-    public Pizza(String name, char size, String type)
+    public BankAccount(String name, char size, String type)
     {
         this.name = name;
         this.toppings = new String[] {"Cheese", "Pepperoni"};
         this.size = size;
         this.type = type;
         this.slices = 10;
-        numberOfPizzas++;
+        numberOfAccounts++;
     }
 
 
@@ -63,7 +63,7 @@ public class BankAccount
     {
         if(name.equals(""))
         {
-            System.out.println("You must enter a name for your Pizza.");
+            System.out.println("You must enter a name for your BankAccount.");
             return;
         }
         this.name = name;
@@ -84,9 +84,9 @@ public class BankAccount
     {
         this.slices = slices;
     }
-    // public void setNumberOfPizzas(int totalPizzas )
+    // public void setnumberOfAccounts(int totalBankAccounts )
     // {
-    //     this.totalPizzas = totalPizzas;
+    //     this.totalBankAccounts = totalBankAccounts;
     // }
 
     //getters
@@ -111,19 +111,19 @@ public class BankAccount
          return this.slices;
      }
      // ADDED STATIC
-     public static int getNumberOfPizzas()
+     public static int getNumberOfAccounts()
     {
-        // this.numberOfPizzas;
-        return numberOfPizzas;
+        // this.numberOfAccounts;
+        return numberOfAccounts;
     }
 
     
     public static String advertise()
     {
-        return "EYYYY we got some Pizza ova here!";
+        return "EYYYY we got some BankAccount ova here!";
     }
 
-    public String displayPizza()
+    public String displayBankAccount()
     {
         return String.format("This is a %s with %s toppings %d slices", this.name, 
         Arrays.toString(this.toppings), this.slices);
@@ -131,12 +131,12 @@ public class BankAccount
 
 // THIS METHOD OBJECTS AFFECTS OTHER OBJECTS ATTRIBUTES
 
-    public void pizzaFight(Pizza otherPizza)
+    public void BankAccountFight(BankAccount otherBankAccount)
     {
-        int numOfSlices = otherPizza.getSlices();
+        int numOfSlices = otherBankAccount.getSlices();
         numOfSlices -= 1;
-        otherPizza.setSlices(numOfSlices);
+        otherBankAccount.setSlices(numOfSlices);
 
-        System.out.println(this.name + " just pwnt " + otherPizza.getName() + " and " + otherPizza.getName() + " currently has " + otherPizza.getSlices());
+        System.out.println(this.name + " just pwnt " + otherBankAccount.getName() + " and " + otherBankAccount.getName() + " currently has " + otherBankAccount.getSlices());
     }
 }

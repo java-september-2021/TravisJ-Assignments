@@ -41,7 +41,7 @@ public class BankAccountTester
         System.out.println("Pizza Toppings: " + Arrays.toString(veggiePizza.getToppings())+ "\n");
 
         //CHECK TOTAL PIZZAS MADE        
-        System.out.println("Total Pizzas Made: " + Pizza.getNumberOfPizzas()+ "\n");
+        System.out.println("Total Pizzas Made: " + Pizza.getNumberOfAccounts()+ "\n");
         System.out.println(Pizza.advertise());
     }
 }
