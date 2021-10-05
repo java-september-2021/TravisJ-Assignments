@@ -17,4 +17,11 @@ public class MainController
 	model.addAttribute("name",name);
 	return "index.jsp";
 	}
+	
+	@RequestMapping("/{name}")
+	public String index2(Model model, @RequestParam(value="name")  String name)
+	{
+	model.addAttribute("name",name);
+	return "index.jsp";
+	}
 }
