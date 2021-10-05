@@ -52,7 +52,6 @@ public class Album
 	//SELECT * FROM albums;
 
 	
-	
 	// THESE ANNOTATIONS SET THE VALIDATION PARAMETERS
 	
 	@Id // the ID is the primary key
@@ -67,6 +66,7 @@ public class Album
 	
 //	@NotEmpty // BUT spaces are still there
 	@NotBlank // use this so it accounts for blank spaces
+	@Size(min=2, max=200)
 	private String artistName;  //his is BAND NAME
 	
 	// THIS IS FOR INTEGER so its notNULL for numbers
@@ -74,7 +74,7 @@ public class Album
 	@NotNull
 //	@Min(1800)  //dont need using range
 //	@max(10000) //dont need using range
-	@Range(min=1800, max= 99999)
+	@Range(min=1600, max= 99999)
 	private Integer year;
 	
 	@Column(updatable=false)  // ENABLE WITH JAVA.UTIL.date
