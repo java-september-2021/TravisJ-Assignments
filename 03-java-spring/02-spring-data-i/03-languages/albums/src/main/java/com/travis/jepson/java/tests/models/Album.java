@@ -26,7 +26,8 @@ import com.sun.istack.NotNull;
 @Table(name="albums")  // PLURAL here at table
 
 
-// WHEN ADDING THIS MODELS INITIALLY --- select ADD => new PACKAGE
+// ** WHEN ADDING THIS MODELS **
+// INITIALLY --- select ADD => new PACKAGE
 // WHEN CREATING THIS FILE, select ADD => new CLASS - - - - WHEN ADDING TO THE .models setup
 
 public class Album 
@@ -58,8 +59,7 @@ public class Album
 	@GeneratedValue(strategy = GenerationType.IDENTITY)  // this incriments the ID ** VERY IMPORTANT **
 	private Long id;  // very important to set as long
 	
-	// AFFECTS ALBUM NAME
-	@Size(min=2, max=200)
+	@Size(min=2, max=200) // AFFECTS ALBUM NAME
 	private String albumName;
 	
 	// THIS IS FOR NOT 
@@ -77,29 +77,32 @@ public class Album
 	@Range(min=1600, max= 99999)
 	private Integer year;
 	
+	// LOCK THIS DATE
 	@Column(updatable=false)  // ENABLE WITH JAVA.UTIL.date
-	@DateTimeFormat(pattern="yyyy,MM,DD HH:mm:ss")
+	@DateTimeFormat(pattern="yyyy,MM,DD HH:mm:ss") // you  can format this
 	private Date createdAt;
 	
-	@DateTimeFormat(pattern="yyyy,MM,DD HH:mm:ss")
+	@DateTimeFormat(pattern="yyyy,MM,DD HH:mm:ss") // you  can format this
 	private Date updatedAt;
 	
 	//CALL BACK METHOD this gets triggered and calls back to what it was
 	// doing beforehand it was set up
 	// This exists before changing any other values
-	
+	// always USE THIS!
 	@PrePersist
 	protected void onCreate()
 	{
 		this.createdAt = new Date();
 	}
-	
+	// makes new date object when updated
 	@PreUpdate
 	protected void onUpdate()
 	{
 		this.updatedAt = new Date();
 	}
 	
+	//
+	//
 	// KEEP THIS BLANK - - - - JAVA BEAN
 	public Album()
 	{
@@ -136,5 +139,19 @@ public class Album
 
 	public void setYear(Integer year) {
 		this.year = year;
+	}
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
 	}	
+	
+	
 }

@@ -44,7 +44,7 @@
 			<scope>test</scope>
 		</dependency>
 		
-	<!-- 	FRONT END ADD -->
+	<!-- 	FRONT END ADD SQL LINKING DISPLAYING -->
 		<dependency>
                 <groupId>org.apache.tomcat.embed</groupId>
                 <artifactId>tomcat-embed-jasper</artifactId>
@@ -63,18 +63,13 @@
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-		<!-- ADD -->
+		<!-- ADD CRITICAL FOR DATA INTEGRITY SQL VALIDATION-->
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
-		
-		
-        
 	</dependencies>
 	
-	 
-
 	<build>
 		<plugins>
 			<plugin>
