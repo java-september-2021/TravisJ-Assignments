@@ -17,6 +17,21 @@
 	color: black;
 }
 
+.farm 
+{
+	background: #2392bc;
+	width: 95%;
+	padding: 20px;
+	color: #ffffff;
+	border-radius: 50px;
+	border: 0px;
+	font-weight: bold;
+	margin: 20px;
+	display: inline-block;
+	align-content: center;
+	text-align: center;
+}
+
 .containerBasic 
 {
 	background: #6ea4be;

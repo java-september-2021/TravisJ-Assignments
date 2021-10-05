@@ -15,21 +15,20 @@
 	
 	<div class="containerBasic">
 		<h1>Time Dashboard</h1>
-		<p>Please enter your info:</p><br>
 	
 	</div>
 	
 		<div class="farm">
 			<form method="POST" action="/date">
-				<input type="hidden" name="building" value="farm">
+				<input type="hidden" name="building" value="date">
 				<button class="buttonStyle">Date Template</button>
 			</form>
 		</div>
 		
 		<div class="farm">
 			<form method="POST" action="/time">
-				<input type="hidden" name="building" value="cave">
-				<button class="buttonStyle">Time Tempalte</button>
+				<input type="hidden" name="building" value="time">
+				<button class="buttonStyle">Time Template</button>
 			</form>
 		</div>
 		
