@@ -13,46 +13,32 @@
 
 	<body class="pagestyle">
 	
-	<div class="containerBasic">
-		<h1>Record Albums!</h1>
-		<p>The place to be.</p>
-	
-		<h2>Check out our exclusive content library!</h2>
-		<p>The "Who's that" of the Music World.</p>
-	</div>
-	
-	<table>
-		<thead>
-			<tr>
-				<th>ID</th>
-				<th>Album Name</th>
-				<th>Band Name</th>
-				<th>Year</th>
-			</tr>
-			<c:forEach items="${allAlbums}" var="album">
-				<tr>
-					<td>${album.id}</td>
-					<td>${album.albumName}</td>
-					<td>${album.artistName}</td>
-					<td>${album.year}</td>
-					
+		<div class="containerBasic">
+			<h1>Record Albums!</h1>
+			<p>The place to be.</p>
+		
+			<h2>Check out our exclusive content library!</h2>
+			<p>The "Who's that" of the Music World.</p>
+		</div>
+		
+		<table class="tableContainerBasic">
+			<thead >
+				<tr >
+					<th class="leftTableHeader">ID</th>
+					<th class="centerTableHeader">Album Name</th>
+					<th class="centerTableHeader">Band Name</th>
+					<th class="rightTableHeader">Year</th>
 				</tr>
-			</c:forEach>
-		</thead>
-	</table>
-	
-	<%-- <div class="containerBasic">
-		<c:forEach items="${allAlbums}" var="album">
-		</c:forEach>
-	</div> --%>
-	
-<!-- 	<div class="containerBasic">
-		<form action="/tellJoke" method="post">
-		<input type="text" name="name" placeholder="Your Name" class="entryContainer"><br><br>
-		<textarea name="joke" placeholder="Tell a joke!" class="entryContainer"></textarea><br><br>
-		<button class="buttonStyle">Submit Joke</button>
-		</form>
-	</div> -->
+				<c:forEach items="${allAlbums}" var="album">
+					<tr class="tableContainerBasic">
+						<td class="leftSingleCell">${album.id}</td>
+						<td class="singleCell">${album.albumName}</td>
+						<td class="singleCell">${album.artistName}</td>
+						<td class="rightSingleCell">${album.year}</td>
+					</tr>
+				</c:forEach>
+			</thead>
+		</table>
 	
 	</body>
 </html>

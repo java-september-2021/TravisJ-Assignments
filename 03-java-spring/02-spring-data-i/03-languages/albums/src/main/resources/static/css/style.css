@@ -2,8 +2,8 @@
 
 .pagestyle 
 {
-	background: rgb(25, 59, 15);
-	border: radius 10px, thickness 3px;
+	background: rgb(58, 59, 59);
+	font-family: sans-serif;
 }
 
 .buttonStyle 
@@ -20,7 +20,6 @@
 .containerBasic 
 {
 	background: #6ea4be;
-	/* background: #f5ff90; cool yellow */
 	padding: 20px;
 	border-radius: 50px;
 	border: 0px;
@@ -30,6 +29,105 @@
 	align-content: center;
 	text-align: center;
 }
+
+/* MOD TABLE CELLS */
+
+.tableContainerBasic 
+{
+	
+	width: 100%;
+	padding: 20px;
+	/* border-radius: 50px; */
+	border: 0px;
+	font-weight: bold;
+	margin: 10px;
+	align-content: center;
+	text-align: center;
+}
+
+.leftTableHeader 
+{
+	background: #feff00;
+	width: 25%;
+	padding: 20px;
+	border-radius: 20px 0px 0px 20px;
+	border: 0px;
+	font-weight: bold;
+	margin: 20px;
+	/* display: flex; */
+	align-content: center;
+	text-align: center;
+}
+
+.rightTableHeader 
+{
+	background: #feff00;
+	width: 25%;
+	padding: 20px;
+	border-radius: 0px 20px 20px 0px;
+	border: 0px;
+	font-weight: bold;
+	margin: 20px;
+	/* display: flex; */
+	align-content: center;
+	text-align: center;
+}
+
+.centerTableHeader 
+{
+	background: #feff00;
+	width: 25%;
+	padding: 20px;
+	border-radius: 0px 0px 0px 0px;
+	/* border: 0px; */
+	font-weight: bold;
+	margin: 20px;
+	/* display: flex; */
+	align-content: center;
+	text-align: center;
+}
+
+.singleCell 
+{
+	background: #f5ff90;
+	width: 25%;
+	padding: 10px;
+	border-radius: 0px 0px 0px 0px;
+	border: 0px;
+	font-weight: bold;
+	/* margin: 20px; */
+	/* display: flex; */
+	align-content: center;
+	text-align: center;
+}
+
+.leftSingleCell 
+{
+	background: #f5ff90;
+	width: 25%;
+	padding: 10px;
+	border-radius: 20px 0px 0px 20px;
+	border: 0px;
+	font-weight: bold;
+	/* margin: 20px; */
+	align-content: center;
+	text-align: center;
+}
+
+.rightSingleCell 
+{
+	background: #f5ff90;
+	width: 25%;
+	padding: 10px;
+	border-radius: 0px 20px 20px 0px;
+	border: 0px;
+	font-weight: bold;
+	/* margin-right: 20px; */
+	align-content: center;
+	text-align: center;
+}
+
+
 
 .entryContainer
 {
