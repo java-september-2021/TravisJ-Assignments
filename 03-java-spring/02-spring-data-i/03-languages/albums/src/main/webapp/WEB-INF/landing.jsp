@@ -34,10 +34,6 @@
 	</div>
 	
 	
-	
-	
-	
-	
 	<table>
 		<thead>
 			<tr >
@@ -46,6 +42,8 @@
 				<th class="tableHeader">Band Name</th>
 				<th class="rightTableHeader">Year</th>
 			</tr>
+			
+			<!-- var album is our iterator -->
 			<c:forEach items="${allAlbums}" var="album">
 				<tr class="tableContainerBasic">
 					<td class="singleCell">${album.id}</td>

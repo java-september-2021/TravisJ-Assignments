@@ -79,7 +79,8 @@
 	width: 25%;
 	padding: 20px;
 	border-radius: 0px 0px 0px 0px;
-	/* border: 0px; */
+	/* border: none; */
+	/* border-color: #feff00; */
 	font-weight: bold;
 	margin: 20px;
 	/* display: flex; */
@@ -87,7 +88,7 @@
 	text-align: center;
 }
 
-.singleCell 
+.singleCell  /* MIDDLE */
 {
 	background: #f5ff90;
 	width: 25%;

@@ -24,7 +24,7 @@
 		<table class="tableContainerBasic">
 			<thead >
 				<tr >
-					<th class="leftTableHeader">ID</th>
+					<th class="leftTableHeader">ID #</th>
 					<th class="centerTableHeader">Album Name</th>
 					<th class="centerTableHeader">Band Name</th>
 					<th class="rightTableHeader">Year</th>

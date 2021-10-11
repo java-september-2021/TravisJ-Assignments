@@ -44,14 +44,11 @@ public class Album
 	// REMEMBER these are then changed to name_name etc
 	// id is automatically generated
 	// INSERT INTO 'albums' (album_name, artist_name, year) VALUES ("The Way", "Fastball", 1998);
-	// TRY without quotes because SQL IS fffffs
+	// TRY without quotes => *** THIS IS WHAT WORKS ***
 	// INSERT INTO albums (album_name, artist_name, year) VALUES ("The Way", "Fastball", 1998);
-	
-	
 	
 	// in SQL call from this class ALL =>
 	//SELECT * FROM albums;
-
 	
 	// THESE ANNOTATIONS SET THE VALIDATION PARAMETERS
 	
@@ -101,14 +98,24 @@ public class Album
 		this.updatedAt = new Date();
 	}
 	
+	// KEEP THIS BLANK - - - - *** JAVA BEAN ***
 	//
-	//
-	// KEEP THIS BLANK - - - - JAVA BEAN
+	// BELOW THIS click on line, hit source > constructor > toggle attributes etc
 	public Album()
 	{
 		
 	}
-
+	
+	// THIS IS THE GENERATED CONSTRUCTOR * * *
+	// toggle off ID, createdAt and updatedAt since this is automatically generated
+	// clean up the @attributes etc
+	public Album(String albumName, String artistName, Integer year) 
+	{
+		this.albumName = albumName;
+		this.artistName = artistName;
+		this.year = year;
+	}
+	
 	public Long getId() {
 		return id;
 	}

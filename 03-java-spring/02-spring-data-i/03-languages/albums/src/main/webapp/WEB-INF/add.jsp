@@ -10,28 +10,35 @@
 		<link rel="stylesheet" href="/css/style.css">
 	</head>
 
-<!-- 
-THIS IS WHERE THE USER WILL ADD
-ALL added DATA IS VALIDATED through the MODELS package
-In this case Album.java
- -->
-
+<!--  THIS IS WHERE THE USER WILL ADD ALL added DATA IS VALIDATED through the MODELS package
+In this case Album.java -->
 	<body class="pagestyle">
 		<div class="containerBasic">
 			<h1>Create New Album</h1>
-			<p>Please enter basic info to get your new album made.</p>
+			<p>Please enter this basic info to get your new album created.</p>
 		</div>
 		
 		<div class="containerBasic">
-			<form action="/tellJoke" method="post">
-			<input type="text" name="name" placeholder="Your Name" class="entryContainer"><br><br>
-			<textarea name="joke" placeholder="Tell a joke!" class="entryContainer"></textarea><br><br>
-			<button class="buttonStyle">Submit Joke</button>
+			<form action="/newalbum" method="post">  <!-- form action is our END POINT -->
+			<p>Album:</p>
+				<input type="text" name="albumName" placeholder="Name of Album" class="entryContainer"><br><br>
+			<p>Band:</p>
+				<input type="text" name="artistName" placeholder="Band or Artist's Name" class="entryContainer"><br><br>
+			<p>Year:</p>
+				<input type="text" name="year" placeholder="Year Released" class="entryContainer"><br><br>
+				<button class="buttonStyle">Add New Album</button>
 			</form>
 		</div>
 		
-		<div class="containerBasic">
-			<form action="/tellJoke" method="post">
+		
+		
+		
+		
+		
+		<!-- ADD LATER FOR OTHER APP -->
+		
+		<!-- <div class="containerBasic">
+			<form action="/newuser" method="post">
 			<input type="text" name="name" placeholder="Your Name" class="entryContainer"><br>
 			
 			<p>Location:  </p>
@@ -56,6 +63,8 @@ In this case Album.java
 			<textarea name="joke" placeholder="Tell a joke!" class="entryContainer"></textarea><br><br>
 			<button class="buttonStyle">Submit Your Results</button>
 			</form>
-		</div>
+		</div> -->
+		
+		
 	</body>
 </html>
