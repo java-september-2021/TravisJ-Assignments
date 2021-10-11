@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 
 <!DOCTYPE html>
 <html>
@@ -18,18 +20,41 @@ In this case Album.java -->
 			<p>Please enter this basic info to get your new album created.</p>
 		</div>
 		
-		<div class="containerBasic">
-			<form action="/newalbum" method="post">  <!-- form action is our END POINT -->
+		<div class="containerSideBySide">
+			<form action="/newalbumHTMLadd" method="post">  <!-- form action is our END POINT -->
+			<h2>HTML FORM DATABASE ADD</h2>
 			<p>Album:</p>
 				<input type="text" name="albumName" placeholder="Name of Album" class="entryContainer"><br><br>
 			<p>Band:</p>
 				<input type="text" name="artistName" placeholder="Band or Artist's Name" class="entryContainer"><br><br>
 			<p>Year:</p>
-				<input type="text" name="year" placeholder="Year Released" class="entryContainer"><br><br>
-				<button class="buttonStyle">Add New Album</button>
+				<input type="text" name="year" placeholder="Year Released" class="entryContainer"><br><br><br>
+				<button class="buttonStyle">Add Album</button>
 			</form>
 		</div>
 		
+		
+		<!-- action is the newalbum -->
+		<!-- NOTE the ** MODEL attribute ** add and  ** form:form ** -->
+		<!-- ALSO ADD THE PREFIX at top with form -->
+		<div class="containerSideBySide">
+		<h2>SPRING MVC FORMS ADD</h2>
+			<form:form action="/newalbum" method="post" modelAttribute="album">
+				<form:label path="albumName">Album:</form:label><br><br>
+				<form:errors path="albumName"/>   <!-- checks for validation errors and DISPLAYS error text-->
+				<form:input type="text" path="albumName" placeholder="Name of Album" class="entryContainer"/><br><br><br>
+				
+				<form:label path="artistName">Band:</form:label><br><br>
+				<form:errors path="artistName"/>   <!-- checks for validation errors and DISPLAYS error text-->
+				<form:input type="text" path="artistName" placeholder="Band or Artist's Name" class="entryContainer"/><br><br><br>
+				
+				<form:label path="year">Year:</form:label><br><br>
+				<form:errors path="year"/>   <!-- checks for validation errors and DISPLAYS error text-->
+				<form:input type="text" path="year" placeholder="Year Released" class="entryContainer"/><br><br>
+			
+				<button class="buttonStyle">Add Album</button>
+			</form:form>
+		</div>
 		
 		
 		

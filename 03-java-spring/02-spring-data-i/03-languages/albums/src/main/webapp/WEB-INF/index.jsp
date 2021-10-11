@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
     
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE html>
 <html>
@@ -18,7 +19,18 @@
 			<p>The place to be.</p>
 		
 			<h2>Check out our exclusive content library!</h2>
-			<p>The "Who's that" of the Music World.</p>
+			<p>The "Who's that" of the Music World.</p><br>
+			
+			<!-- THIS ALLOWS THE BUTTON TO TAKE YOU TO THE CREATE PAGE -->
+			<!-- WONT WORK?? -->
+			<form action="/newalbumHTMLadd">	
+				<button class="buttonStyleSideBySide">Create New Album HTML Form</button>
+			</form><br>
+			
+			<form action="/newalbum">	
+				<button class="buttonStyleSideBySide">Create New Album Spring MVC</button>
+			</form>
+		
 		</div>
 		
 		<table class="tableContainerBasic">

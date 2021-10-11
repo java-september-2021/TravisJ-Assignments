@@ -17,6 +17,18 @@
 	color: black;
 }
 
+.buttonStyleSideBySide 
+{
+	background: white;
+	padding: 20px;
+	display: inline-block;
+	border-radius: 50px;
+	border: 0px;
+	font-weight: bold;
+	background:#78c551;
+	color: black;
+}
+
 .containerBasic 
 {
 	background: #6ea4be;
@@ -26,6 +38,20 @@
 	font-weight: bold;
 	margin: 20px;
 	/* display: flex; */
+	align-content: center;
+	text-align: center;
+}
+
+.containerSideBySide 
+{
+	background: #6ea4be;
+	width: 45%;
+	padding: 20px;
+	border-radius: 50px;
+	border: 0px;
+	font-weight: bold;
+	margin: 20px;
+	display: inline-block;
 	align-content: center;
 	text-align: center;
 }
@@ -134,7 +160,7 @@
 {
 	border-radius: 50px;
 	border: 0px;
-	padding: 10px;
+	padding: 20px;
 	background:#4b4a4b;
 	color: white;
 }

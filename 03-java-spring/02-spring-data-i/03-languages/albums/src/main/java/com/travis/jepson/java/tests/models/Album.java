@@ -56,7 +56,7 @@ public class Album
 	@GeneratedValue(strategy = GenerationType.IDENTITY)  // this incriments the ID ** VERY IMPORTANT **
 	private Long id;  // very important to set as long
 	
-	@Size(min=2, max=200) // AFFECTS ALBUM NAME
+	@Size(min=2, max=200, message="Please enter an album name between 2-200 characters.") // AFFECTS ALBUM NAME
 	private String albumName;
 	
 	// THIS IS FOR NOT 
