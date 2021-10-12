@@ -23,9 +23,13 @@
 			
 			<!-- THIS ALLOWS THE BUTTON TO TAKE YOU TO THE CREATE PAGE -->
 			<!-- WONT WORK?? -->
+			<!-- CHANGE FROM FORUM TO HYPERLINK THEN STYLE -->
 			<form action="/newalbumHTMLadd">	
 				<button class="buttonStyleSideBySide">Create New Album HTML Form</button>
 			</form><br>
+			
+		<!-- 	STILL WONT WORK -->
+			<a href="/newalbumHTMLadd"> A TAG LINK TO SAME PLACE </a>
 			
 			<form action="/newalbum">	
 				<button class="buttonStyleSideBySide">Create New Album Spring MVC</button>

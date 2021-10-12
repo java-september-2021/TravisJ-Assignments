@@ -7,9 +7,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<meta charset="UTF-8">
-	<title>Edit ${album.albumName}</title>
-	<link rel="stylesheet" href="/css/style.css">
+		<meta charset="UTF-8">
+		<title>Edit ${album.albumName}</title>
+		<link rel="stylesheet" href="/css/style.css">
 	</head>
 	
 	<body>
@@ -35,7 +35,6 @@
 				<button class="buttonStyle">Update Album</button>
 			</form:form>
 		</div>
-	
 	
 	</body>
 </html>

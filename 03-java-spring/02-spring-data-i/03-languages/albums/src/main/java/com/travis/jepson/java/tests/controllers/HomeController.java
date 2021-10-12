@@ -93,7 +93,7 @@ public class HomeController
 	{
 		if(result.hasErrors())
 		{
-			viewModel.addAttribute("album", this.aService.getOneAlbum(id));
+//			viewModel.addAttribute("album", this.aService.getOneAlbum(id));  DONT NEED THIS
 			return "albumedit.jsp";
 		}
 		this.aService.editAlbum(album);
@@ -123,13 +123,13 @@ public class HomeController
 								Album album,
 								BindingResult result)  // this reports errors
 			{
-			if(result.hasErrors())
-			{
-				return "add.jsp";
-			}
-			// IF NO ERRORS THEN THIS IS MADE!
-			this.aService.createAlbum(album);
-			return "redirect:/";
+				if(result.hasErrors())
+				{
+					return "add.jsp";
+				}
+				// IF NO ERRORS THEN THIS IS MADE!
+				this.aService.createAlbum(album);
+				return "redirect:/";
 			}
 	
 	

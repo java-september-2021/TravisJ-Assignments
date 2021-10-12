@@ -13,12 +13,12 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Range;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import com.sun.istack.NotNull;
 
 // COMMAND + SHITF + O to auto add these
 // ALWAYS IMPORT from java.persistence.Table ** SEE ABOVE **
@@ -63,15 +63,17 @@ public class Album
 	
 //	@NotEmpty // BUT spaces are still there
 	@NotBlank // use this so it accounts for blank spaces
-	@Size(min=2, max=200)
+	@Size(min=2, max=200, message="Please enter a name between 2-200 characters.")
 	private String artistName;  //his is BAND NAME
 	
 	// THIS IS FOR INTEGER so its notNULL for numbers
 	// LOOK AT THE MIN AND MAX for custom messages you want it to not be just size etc
-	@NotNull
 //	@Min(1800)  //dont need using range
 //	@max(10000) //dont need using range
-	@Range(min=1600, max= 99999)
+//	@NotBlank
+	
+	@NotNull(message="DONT BE A ZERO BE A HERO!")
+	@Range(min=1600, max= 99999, message="Please enter a year between 1600 and 99999.")
 	private Integer year;
 	
 	// LOCK THIS DATE
