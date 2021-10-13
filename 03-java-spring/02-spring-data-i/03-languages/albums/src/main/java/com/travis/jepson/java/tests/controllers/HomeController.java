@@ -100,8 +100,6 @@ public class HomeController
 		return "redirect:/";
 	}
 	
-	
-	
 	//
 	// JSTL forum FORMATTING  => SPRING MVC FORUM
 	//

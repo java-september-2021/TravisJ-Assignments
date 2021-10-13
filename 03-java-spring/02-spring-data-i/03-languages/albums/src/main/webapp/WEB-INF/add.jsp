@@ -23,12 +23,18 @@ In this case Album.java -->
 		<div class="containerSideBySide">
 			<form action="/newalbumHTMLadd" method="post">  <!-- form action is our END POINT -->
 			<h2>HTML FORM DATABASE ADD</h2>
-			<p>Album:</p>
-				<input type="text" name="albumName" placeholder="Name of Album" class="entryContainer"><br><br>
-			<p>Band:</p>
-				<input type="text" name="artistName" placeholder="Band or Artist's Name" class="entryContainer"><br><br>
-			<p>Year:</p>
-				<input type="text" name="year" placeholder="Year Released" class="entryContainer"><br><br><br>
+			<div id="HTMLoptionSelectContainer">
+				<p>Album:</p>
+				<input type="text" name="albumName" placeholder="Name of Album" class="entryContainer">
+			</div>
+			<div id="HTMLoptionSelectContainer">
+				<p>Band:</p>
+				<input type="text" name="artistName" placeholder="Band or Artist's Name" class="entryContainer">
+			</div>
+			<div id="HTMLoptionSelectContainer">
+				<p>Year:</p>
+				<input type="text" name="year" placeholder="Year Released" class="entryContainer">
+			</div>
 				<button class="buttonStyle">Add Album</button>
 			</form>
 		</div>
@@ -40,24 +46,24 @@ In this case Album.java -->
 		<div class="containerSideBySide">
 		<h2>SPRING MVC FORMS ADD</h2>
 			<form:form action="/newalbum" method="post" modelAttribute="album">
-				<form:label path="albumName">Album:</form:label><br><br>
-				<form:errors path="albumName"/>   <!-- checks for validation errors and DISPLAYS error text-->
-				<form:input type="text" path="albumName" placeholder="Name of Album" class="entryContainer"/><br><br><br>
-				
-				<form:label path="artistName">Band:</form:label><br><br>
-				<form:errors path="artistName"/>   <!-- checks for validation errors and DISPLAYS error text-->
-				<form:input type="text" path="artistName" placeholder="Band or Artist's Name" class="entryContainer"/><br><br><br>
-				
-				<form:label path="year">Year:</form:label><br><br>
-				<form:errors path="year"/>   <!-- checks for validation errors and DISPLAYS error text-->
-				<form:input type="text" path="year" placeholder="Year Released" class="entryContainer"/><br><br>
-			
+				<div class="optionSelectContainer">
+					<form:label path="albumName">Album:</form:label><br><br>
+					<form:errors  class="errorAlertPopupContainer" path="albumName"/>   <!-- checks for validation errors and DISPLAYS error text-->
+					<form:input type="text" path="albumName" placeholder="Name of Album" class="entryContainer"/><br><br><br>
+				</div>
+				<div class="optionSelectContainer">
+					<form:label path="artistName">Band:</form:label><br><br>
+					<form:errors class="errorAlertPopupContainer" path="artistName"/>   <!-- checks for validation errors and DISPLAYS error text-->
+					<form:input type="text" path="artistName" placeholder="Band or Artist's Name" class="entryContainer"/><br><br><br>
+				</div>
+				<div class="optionSelectContainer">
+					<form:label path="year">Year:</form:label><br><br>
+					<form:errors class="errorAlertPopupContainer" path="year"/><br>   <!-- checks for validation errors and DISPLAYS error text-->
+					<form:input type="text" path="year" placeholder="Year Released" class="entryContainer"/><br><br>
+				</div>
 				<button class="buttonStyle">Add Album</button>
 			</form:form>
 		</div>
-		
-		
-		
 		
 		
 		<!-- ADD LATER FOR OTHER APP -->

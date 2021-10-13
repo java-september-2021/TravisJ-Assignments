@@ -20,18 +20,21 @@
 		<div class="containerSideBySide">
 		<h2>Edit or Update Album Details</h2>
 			<form:form action="/edit/${album.id}" method="post" modelAttribute="album">
-				<form:label path="albumName">Album:</form:label><br><br>
-				<form:errors path="albumName"/>   <!-- checks for validation errors and DISPLAYS error text-->
-				<form:input type="text" path="albumName" placeholder="Name of Album" class="entryContainer"/><br><br><br>
-				
-				<form:label path="artistName">Band:</form:label><br><br>
-				<form:errors path="artistName"/>   <!-- checks for validation errors and DISPLAYS error text-->
-				<form:input type="text" path="artistName" placeholder="Band or Artist's Name" class="entryContainer"/><br><br><br>
-				
-				<form:label path="year">Year:</form:label><br><br>
-				<form:errors path="year"/>   <!-- checks for validation errors and DISPLAYS error text-->
-				<form:input type="text" path="year" placeholder="Year Released" class="entryContainer"/><br><br>
-			
+				<div class="optionSelectContainer">
+					<form:label path="albumName">Album:</form:label><br><br>
+					<form:errors class="errorAlertPopupContainer" path="albumName"/>   <!-- checks for validation errors and DISPLAYS error text-->
+					<form:input type="text" path="albumName" placeholder="Name of Album" class="entryContainer"/><br><br><br>
+				</div>
+				<div class="optionSelectContainer">
+					<form:label path="artistName">Band:</form:label><br><br>
+					<form:errors class="errorAlertPopupContainer" path="artistName"/>   <!-- checks for validation errors and DISPLAYS error text-->
+					<form:input type="text" path="artistName" placeholder="Band or Artist's Name" class="entryContainer"/><br><br><br>
+				</div>
+				<div class="optionSelectContainer">
+					<form:label path="year">Year:</form:label><br><br>
+					<form:errors class="errorAlertPopupContainer" path="year"/>   <!-- checks for validation errors and DISPLAYS error text-->
+					<form:input type="text" path="year" placeholder="Year Released" class="entryContainer"/><br><br>
+				</div>
 				<button class="buttonStyle">Update Album</button>
 			</form:form>
 		</div>

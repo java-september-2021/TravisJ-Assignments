@@ -42,19 +42,7 @@
 	text-align: center;
 }
 
-.containerSideBySide 
-{
-	background: #6ea4be;
-	width: 45%;
-	padding: 20px;
-	border-radius: 50px;
-	border: 0px;
-	font-weight: bold;
-	margin: 20px;
-	display: inline-block;
-	align-content: center;
-	text-align: center;
-}
+
 
 /* MOD TABLE CELLS */
 
@@ -163,6 +151,77 @@
 	padding: 20px;
 	background:#4b4a4b;
 	color: white;
+}
+
+/* USED IN THE CREATE AND EDIT AREAS */
+.containerSideBySide 
+{
+	background: #6ea4be;
+	width: 30%;
+	padding: 30px;
+	border-radius: 50px;
+	border: 0px;
+	font-weight: bold;
+	margin: 20px;
+	display: inline-block;
+	align-content: center;
+	text-align: center;
+}
+
+.optionSelectContainer 
+{
+	background: #92c5e5;
+	width: 80%;
+	padding: 30px 30px 0px 30px;
+	border-radius: 50px;
+	border: 0px;
+	font-weight: bold;
+	margin: 10px;
+	display: inline-block;
+	align-content: center;
+	text-align: center;
+}
+
+#HTMLoptionSelectContainer 
+{
+	background: #92c5e5;
+	width: 80%;
+	padding: 30px 30px 20px 30px;
+	border-radius: 50px;
+	border: 0px;
+	font-weight: bold;
+	margin: 10px;
+	display: inline-block;
+	align-content: center;
+	text-align: center;
+}
+
+#ittyBitty
+{
+	/* width: 80%; */
+	padding: 5%;
+	margin: 1px;
+	font-size: 9px;
+	color: black;
+	margin: 2px;
+	display: inline-block;
+	/* align-content: center;
+	text-align: center; */
+}
+
+.errorAlertPopupContainer 
+{
+	width: 80%;
+	padding: 5%;
+	margin: 30px;
+	background:#feff00;
+	color: black;
+	font-weight: bold;
+	border-radius: 20px;
+	margin: 10px;
+	display: inline-block;
+	align-content: center;
+	text-align: center;
 }
 
 ::placeholder 

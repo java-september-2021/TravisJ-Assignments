@@ -24,12 +24,16 @@
 			<!-- THIS ALLOWS THE BUTTON TO TAKE YOU TO THE CREATE PAGE -->
 			<!-- WONT WORK?? -->
 			<!-- CHANGE FROM FORUM TO HYPERLINK THEN STYLE -->
+			
+			<!-- THIS IS THE LINK FOR HTML SETTING -->
+			<%-- <a href ></a>
+			
 			<form action="/newalbumHTMLadd">	
 				<button class="buttonStyleSideBySide">Create New Album HTML Form</button>
-			</form><br>
+			</form><br> --%>
 			
 		<!-- 	STILL WONT WORK -->
-			<a href="/newalbumHTMLadd"> A TAG LINK TO SAME PLACE </a>
+			<!-- <a href="/newalbumHTMLadd"> A TAG LINK TO SAME PLACE </a> -->
 			
 			<form action="/newalbum">	
 				<button class="buttonStyleSideBySide">Create New Album Spring MVC</button>
@@ -47,7 +51,15 @@
 				</tr>
 				<c:forEach items="${allAlbums}" var="album">
 					<tr class="tableContainerBasic">
-						<td class="leftSingleCell">${album.id}</td>
+						<td class="leftSingleCell">${album.id} 
+						
+							<!-- ADD THE IFF STATEMENT -->
+							<p id="ittyBitty">Date Added: ${album.createdAt}</p> </td>
+						<%-- 	if(${album.createdAt})
+							{
+							
+							} --%>
+							
 						<td class="singleCell">${album.albumName}</td>
 						<td class="singleCell">${album.artistName}</td>
 						<td class="rightSingleCell">${album.year}</td>

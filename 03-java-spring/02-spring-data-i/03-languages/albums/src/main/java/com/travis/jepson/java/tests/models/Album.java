@@ -52,17 +52,19 @@ public class Album
 	
 	// THESE ANNOTATIONS SET THE VALIDATION PARAMETERS
 	
+	// USER WILL NOT SEE THIS
 	@Id // the ID is the primary key
 	@GeneratedValue(strategy = GenerationType.IDENTITY)  // this incriments the ID ** VERY IMPORTANT **
 	private Long id;  // very important to set as long
 	
+	@NotBlank(message="Don't forget the album name!") // use this so it accounts for blank spaces
 	@Size(min=2, max=200, message="Please enter an album name between 2-200 characters.") // AFFECTS ALBUM NAME
 	private String albumName;
 	
 	// THIS IS FOR NOT 
 	
 //	@NotEmpty // BUT spaces are still there
-	@NotBlank // use this so it accounts for blank spaces
+	@NotBlank(message="Don't forget the band's name!") // use this so it accounts for blank spaces
 	@Size(min=2, max=200, message="Please enter a name between 2-200 characters.")
 	private String artistName;  //his is BAND NAME
 	
@@ -70,17 +72,17 @@ public class Album
 	// LOOK AT THE MIN AND MAX for custom messages you want it to not be just size etc
 //	@Min(1800)  //dont need using range
 //	@max(10000) //dont need using range
-//	@NotBlank
-	
-	@NotNull(message="DONT BE A ZERO BE A HERO!")
+	@NotNull(message="Don't forget to add the year!")
 	@Range(min=1600, max= 99999, message="Please enter a year between 1600 and 99999.")
 	private Integer year;
 	
+	// USER WILL NOT SEE THIS
 	// LOCK THIS DATE
 	@Column(updatable=false)  // ENABLE WITH JAVA.UTIL.date
 	@DateTimeFormat(pattern="yyyy,MM,DD HH:mm:ss") // you  can format this
 	private Date createdAt;
 	
+	// USER WILL NOT SEE THIS
 	@DateTimeFormat(pattern="yyyy,MM,DD HH:mm:ss") // you  can format this
 	private Date updatedAt;
 	
