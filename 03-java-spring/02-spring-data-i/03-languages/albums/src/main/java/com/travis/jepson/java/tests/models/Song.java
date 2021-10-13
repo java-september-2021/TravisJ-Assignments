@@ -4,9 +4,14 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -17,9 +22,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 // THIS file is made by adding a class to the .models
 
-
 @Entity
-@Table(name="albums")  // PLURAL here at table
+@Table(name="songs")  // PLURAL here at table *** SONGS ***
 public class Song 
 {
 
@@ -39,7 +43,7 @@ public class Song
 	@Range(min=5, max= 99999, message="Please enter your time between 5 and 99999 seconds.")
 	private Integer songDurationInSeconds;
 	
-	
+	// formatted h:MM:SS
 	private String songLength;
 	
 	@Column(updatable=false)  
@@ -48,7 +52,51 @@ public class Song
 	
 	@DateTimeFormat(pattern="yyyy,MM,DD HH:mm:ss") 
 	private Date updatedAt;
-
+	
+	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	// THIS IS HOW YOU CONNECT TO THE PARENT => Album.java
+	//
+	// THIS IS THE CHILD ENTITY => Assigning what songs belong to what album.
+	// Note *** an array list is setup on => Album.java to check this out.
+	// this ManyToOne => connects to Album.java
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="album_id")  // remember SQL naming convention PRIMARY KEY
+	private Album albumSongIsOn;
+	
+	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	
+	
+	// AFTER SETTING ALL VARIABLES REMEMBER TO GENERATE GETTERS AND SETTERS
+	
+	
+	@PrePersist
+	protected void onCreate()
+	{
+		this.createdAt = new Date();
+	}
+	// makes new date object when updated
+	@PreUpdate
+	protected void onUpdate()
+	{
+		this.updatedAt = new Date();
+	}
+	
+	// *** DONT FORGET THE JAVA BEAN ***
+	// Generate => CONSTRUCTOR USING FIELDS => Diselect all for a BEAN!
+	public Song() 
+	{
+		// JAVA BEAN
+	}
+	
+	// ** GETTERS AND SETTERS FOR THE CONNECTION TO PARENT Album.java
+	public Album getAlbumSongIsOn() {
+		return albumSongIsOn;
+	}
+	public void setAlbumSongIsOn(Album albumSongIsOn) {
+		this.albumSongIsOn = albumSongIsOn;
+	}
+	// **
+	
 	public Long getId() {
 		return id;
 	}
@@ -105,8 +153,7 @@ public class Song
 		this.updatedAt = updatedAt;
 	}
 	
-	// AFTER SETTING ALL VARIABLES REMEMBER TO GENERATE GETTERS AND SETTERS
-	
+
 	
 	
 }

@@ -2,13 +2,17 @@ package com.travis.jepson.java.tests.models;
 
 // MAKE SURE THE DATE IS util.date
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 // SOMETIMES THESE VALUES ARE HIDDEN
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -86,6 +90,24 @@ public class Album
 	@DateTimeFormat(pattern="yyyy,MM,DD HH:mm:ss") // you  can format this
 	private Date updatedAt;
 	
+	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	// LINK TO SONGS
+	// Songs.java is a child to this class
+	// MAKE SURE ITS => java.util.list
+	// when making a song object it lives in the album
+	
+	// mappedBy MAKES ASSOCIATIONS BETWEEN TWO MODELS THIS ATTRIBUTE MAKES IT CONNECT
+	// connection point => albumSongIsOn
+	// cascade will allow the songs to be deleted when the album is deleted.
+	// the fetch type will only load these when it is requested  // EAGER will auto-load
+	@OneToMany(mappedBy="albumSongIsOn", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+	private List<Song> songs;
+	
+	
+	
+	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	
+	
 	//CALL BACK METHOD this gets triggered and calls back to what it was
 	// doing beforehand it was set up
 	// This exists before changing any other values
@@ -119,6 +141,15 @@ public class Album
 		this.artistName = artistName;
 		this.year = year;
 	}
+	
+	// *** Getter and setter for connecting to child => Songs.java
+	public List<Song> getSongs() {
+		return songs;
+	}
+	public void setSongs(List<Song> songs) {
+		this.songs = songs;
+	}
+	// ***
 	
 	public Long getId() {
 		return id;
