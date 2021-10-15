@@ -1,6 +1,7 @@
 package com.travis.jepson.java.tests.models;
 
 import java.util.Date;
+import java.util.Optional;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,6 +14,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -64,7 +67,9 @@ public class Song
 	private Album albumSongIsOn;
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-	
+	// ADDING IN SQL
+	// INSERT INTO songs (song_name, song_opening_lyrics, song_duration_in_seconds, song_length, album_id) 
+	// VALUES ("First SQL Song","This is the first ever added SQL song child to album 17...","1337","90:01",17);
 	
 	// AFTER SETTING ALL VARIABLES REMEMBER TO GENERATE GETTERS AND SETTERS
 	
@@ -81,6 +86,17 @@ public class Song
 		this.updatedAt = new Date();
 	}
 	
+	// THIS IS OPTIONAL!!!!! ***  Integer or NULL
+	//
+	@Column(nullable=true)  // this can be NULL  // Nullable
+	@Max(value=100, message="Please enter an age less than 100.")
+	@Min(value=30, message="Please enter an age over 29.")
+//	@Range(min=18, max=30, message="Please enter an album name between 4-200 characters.")
+	private Integer age;
+	//
+	//
+	/////
+	
 	// *** DONT FORGET THE JAVA BEAN ***
 	// Generate => CONSTRUCTOR USING FIELDS => Diselect all for a BEAN!
 	public Song() 
@@ -88,10 +104,28 @@ public class Song
 		// JAVA BEAN
 	}
 	
+	
+	
+	
 	// ** GETTERS AND SETTERS FOR THE CONNECTION TO PARENT Album.java
+	
+	////
+	//
+	public Optional getAge() {
+		return Optional.ofNullable(age);   // THis must use the ofNullable function 
+	}
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+	//
+	////
+	
+	
+	// main CONNECTION
 	public Album getAlbumSongIsOn() {
 		return albumSongIsOn;
 	}
+	
 	public void setAlbumSongIsOn(Album albumSongIsOn) {
 		this.albumSongIsOn = albumSongIsOn;
 	}

@@ -85,9 +85,12 @@ public class HomeController
 		return "albumedit.jsp";
 	}
 	
-	// edit continuted....
+	// EDIT ALBUMS continuted....  
 	// The @Valid and @model then Album MUST BE THE FIRST three ATTRIBUTES
 	// THEY MUST BE ORDERED LIKE THIS
+	//
+	// IS THIS PUT OR POST MAPPING?!
+	
 	@PostMapping("/edit/{id}")
 	public String edit(@Valid @ModelAttribute("album") Album album, BindingResult result, @PathVariable("id") Long id, Model viewModel)
 	{
@@ -129,6 +132,17 @@ public class HomeController
 				this.aService.createAlbum(album);
 				return "redirect:/";
 			}
-	
+		
+		// SONGS
+		// this shows the album details
+		// remember the aService links => getOneAlbum => connects us
+		// takes in ID => stores in Long id,
+		@GetMapping("/album_details/{id}")
+		public String show(@PathVariable("id") Long id, Model viewModel)
+		{
+			// albumDetails.VAR is how you call this on the albumdetails.jsp
+			viewModel.addAttribute("albumDetails", this.aService.getOneAlbum(id))
+			return "albumdetails.jsp";
+		}
 	
 }

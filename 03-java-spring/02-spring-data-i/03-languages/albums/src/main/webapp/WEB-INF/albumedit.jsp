@@ -17,6 +17,8 @@
 	<!-- action is the newalbum -->
 		<!-- NOTE the ** MODEL attribute ** add and  ** form:form ** -->
 		<!-- ALSO ADD THE PREFIX at top with form -->
+		<!-- REMEMBER THIS IS EDITING SO THE METHOD IS PUT NOT POST -->
+		<!-- // CHECK THIS LATER -->
 		<div class="containerSideBySide">
 		<h2>Edit or Update Album Details</h2>
 			<form:form action="/edit/${album.id}" method="post" modelAttribute="album">

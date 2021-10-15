@@ -1,39 +1,24 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE html>
+
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Albums</title>
-<link rel="stylesheet" href="/css/style.css">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/css/style.css">
+	<title>Album Details</title>
 </head>
-
 	<body class="pagestyle">
 	
 		<div class="containerBasic">
+			<p>Album:</p>
 			<h1>Record Albums!</h1>
-			<p>The place to be.</p>
+			
 		
 			<h2>Check out our exclusive content library!</h2>
 			<p>The "Who's that" of the Music World.</p><br>
-			
-			<!-- THIS ALLOWS THE BUTTON TO TAKE YOU TO THE CREATE PAGE -->
-			<!-- WONT WORK?? -->
-			<!-- CHANGE FROM FORUM TO HYPERLINK THEN STYLE -->
-			
-			<!-- THIS IS THE LINK FOR HTML SETTING -->
-			<%-- <a href ></a>
-			
-			<form action="/newalbumHTMLadd">	
-				<button class="buttonStyleSideBySide">Create New Album HTML Form</button>
-			</form><br> --%>
-			
-		<!-- 	STILL WONT WORK -->
-			<!-- <a href="/newalbumHTMLadd"> A TAG LINK TO SAME PLACE </a> -->
 			
 			<form action="/newalbum">	
 				<button class="buttonStyleSideBySide">Create New Album Spring MVC</button>
@@ -52,20 +37,6 @@
 				<c:forEach items="${allAlbums}" var="album">
 					<tr class="tableContainerBasic">
 						<td class="leftSingleCell">${album.id} 
-						
-							<!-- THIS CHECKS IF THE DATA WAS ENTERED -->
-							<!-- THIS IS THE IF checker if its NULL -->
-							
-							<!--
-							 SET COLOR PRIORITYS BASED ON WAHT IS ENTERED
-							 Check the referenced VAR is 
-							-->
-							
-							<!-- USE THIS WHEN YOU WANT IT EMPTY -->
-						    	<%-- <c:when test="${album.createdAt == null}"> 
-						    	</c:when> --%>
-						    	
-						    <!-- DONT COMMENT WITHIN THE CHOOSE -->
 						    <c:choose>
 						    	<c:when test="${album.createdAt == null}"> 
 						    		<p id="ittyBitty">Date Added: No Date Given</p>			   
