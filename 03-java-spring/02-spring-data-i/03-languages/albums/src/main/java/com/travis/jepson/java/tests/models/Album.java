@@ -75,7 +75,7 @@ public class Album
 	// THIS IS FOR INTEGER so its notNULL for numbers
 	// LOOK AT THE MIN AND MAX for custom messages you want it to not be just size etc
 //	@Min(1800)  //dont need using range
-//	@max(10000) //dont need using range
+//	@Max(10000) //dont need using range
 	@NotNull(message="Don't forget to add the year!")
 	@Range(min=1600, max= 99999, message="Please enter a year between 1600 and 99999.")
 	private Integer year;

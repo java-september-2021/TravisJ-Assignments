@@ -22,7 +22,6 @@
 			<p>The "Who's that" of the Music World.</p><br>
 			
 			<!-- THIS ALLOWS THE BUTTON TO TAKE YOU TO THE CREATE PAGE -->
-			<!-- WONT WORK?? -->
 			<!-- CHANGE FROM FORUM TO HYPERLINK THEN STYLE -->
 			
 			<!-- THIS IS THE LINK FOR HTML SETTING -->
@@ -38,7 +37,11 @@
 			<form action="/newalbum">	
 				<button class="buttonStyleSideBySide">Create New Album Spring MVC</button>
 			</form>
-		
+			<!-- REMEMBER THIS HAS ITS OWN CONTROLLER WITH /song/ beginning -->
+			<form action="/songs/createnewsong">	
+				<button class="buttonStyleSideBySide">Create New Song</button>
+			</form>
+			
 		</div>
 		
 		<table class="tableContainerBasic">
@@ -47,13 +50,11 @@
 					<th class="leftTableHeader">ID #</th>
 					<th class="centerTableHeader">Album Name</th>
 					<th class="centerTableHeader">Band Name</th>
-					<th class="rightTableHeader">Year</th>
+					<th class="centerTableHeader">Year</th>
+					<th class="rightTableHeader">More Info</th>
 				</tr>
-				<c:forEach items="${allAlbums}" var="album">
-					<tr class="tableContainerBasic">
-						<td class="leftSingleCell">${album.id} 
-						
-							<!-- THIS CHECKS IF THE DATA WAS ENTERED -->
+				
+				<!-- THIS CHECKS IF THE DATA WAS ENTERED -->
 							<!-- THIS IS THE IF checker if its NULL -->
 							
 							<!--
@@ -66,6 +67,9 @@
 						    	</c:when> --%>
 						    	
 						    <!-- DONT COMMENT WITHIN THE CHOOSE -->
+				<c:forEach items="${allAlbums}" var="album">
+					<tr class="tableContainerBasic">
+						<td class="leftSingleCell">${album.id} 
 						    <c:choose>
 						    	<c:when test="${album.createdAt == null}"> 
 						    		<p id="ittyBitty">Date Added: No Date Given</p>			   
@@ -78,7 +82,9 @@
 						    
 						<td class="singleCell">${album.albumName}</td>
 						<td class="singleCell">${album.artistName}</td>
-						<td class="rightSingleCell">${album.year}</td>
+						<td class="singleCell">${album.year}</td>
+						<!-- DETAIL LINK -->
+						<td class="rightSingleCell"><a href="album_details/${album.id}">All Details</a></td>
 					</tr>
 				</c:forEach>
 			</thead>

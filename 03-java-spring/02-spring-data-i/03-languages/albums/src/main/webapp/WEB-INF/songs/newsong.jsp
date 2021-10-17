@@ -17,7 +17,9 @@
 		
 	
 		<div class="containerBasic">
-			<form:form action="/createnewsong" method="post" modelAttribute="song">  <!-- song matches the controller model attribute -->
+		
+			<!-- // THE ISSUE IS HERE BUT HOW -->
+			<form:form action="/songs/newsongPosted" method="post" modelAttribute="song">  <!-- song matches the controller model attribute -->
 				<div class="optionSelectContainer">
 					<form:label path="songName">Song Name:</form:label><br><br>
 					<form:errors  class="errorAlertPopupContainer" path="songName"/>  

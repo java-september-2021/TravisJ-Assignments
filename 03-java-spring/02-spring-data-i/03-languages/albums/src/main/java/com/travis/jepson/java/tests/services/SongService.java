@@ -39,13 +39,13 @@ public class SongService
 	
 	public Song createSong(Song song)
 	{
-		//CREATE a NEW album
+		//CREATE a NEW song
 		return this.sRepo.save(song);	// uses the aRepo to connect
 	}
 	
 	public Song editSong(Song song)
 	{
-		// UPDATE a album just like creating :))
+		// UPDATE a song just like creating :))
 		// edit on the front end
 		return this.sRepo.save(song);	// uses the aRepo to connect
 	}

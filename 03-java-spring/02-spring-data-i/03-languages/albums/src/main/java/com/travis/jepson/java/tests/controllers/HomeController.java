@@ -133,7 +133,13 @@ public class HomeController
 				return "redirect:/";
 			}
 		
-		// SONGS
+		// THIS LINKS THE DETAIL PAGE FOR ALBUMS
+		// ALSO ALLOWS FOR SONGS TO BE LINKED!!!!
+		//
+		//  albumDetails.albumName FOR EXAMPLE
+		//
+		//
+		// album details = KEY  //  value = ID
 		// this shows the album details
 		// remember the aService links => getOneAlbum => connects us
 		// takes in ID => stores in Long id,
@@ -141,7 +147,7 @@ public class HomeController
 		public String show(@PathVariable("id") Long id, Model viewModel)
 		{
 			// albumDetails.VAR is how you call this on the albumdetails.jsp
-			viewModel.addAttribute("albumDetails", this.aService.getOneAlbum(id))
+			viewModel.addAttribute("albumDetails", this.aService.getOneAlbum(id));
 			return "albumdetails.jsp";
 		}
 	

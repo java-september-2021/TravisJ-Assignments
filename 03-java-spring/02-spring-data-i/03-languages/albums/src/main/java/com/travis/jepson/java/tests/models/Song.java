@@ -89,6 +89,7 @@ public class Song
 	// THIS IS OPTIONAL!!!!! ***  Integer or NULL
 	//
 	@Column(nullable=true)  // this can be NULL  // Nullable
+	// REMOVE FOR NOW...
 	@Max(value=100, message="Please enter an age less than 100.")
 	@Min(value=30, message="Please enter an age over 29.")
 //	@Range(min=18, max=30, message="Please enter an album name between 4-200 characters.")
@@ -104,15 +105,12 @@ public class Song
 		// JAVA BEAN
 	}
 	
-	
-	
-	
 	// ** GETTERS AND SETTERS FOR THE CONNECTION TO PARENT Album.java
 	
 	////
-	//
-	public Optional getAge() {
-		return Optional.ofNullable(age);   // THis must use the ofNullable function 
+	//  IT SUGGESTED <Integer>  ???
+	public Integer getAge() {
+		return this.age;   // THis must use the ofNullable function 
 	}
 	public void setAge(Integer age) {
 		this.age = age;
