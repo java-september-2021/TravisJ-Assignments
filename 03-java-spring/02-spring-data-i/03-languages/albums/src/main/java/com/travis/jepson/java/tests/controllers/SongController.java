@@ -21,7 +21,7 @@ public class SongController
 {
 	@Autowired
 	private SongService sService;
-	
+	//Needs access here too
 	@Autowired
 	private AlbumService aService;
 	
@@ -38,13 +38,15 @@ public class SongController
 	}
 	// case changed to make it stand out
 	@PostMapping("/newsongPosted")  // +/songs
-	public String addSong(@Valid @ModelAttribute("song") Song song, BindingResult result)
+	// ADDING VIEW MODEL IN CASE OF ERROR!?!?
+	public String addSong(@Valid @ModelAttribute("song") Song song, BindingResult result, Model viewModel)
 	{
 		// CONNECT TO ALBUM ID through the ADDED SONG through the child class connector
 		Long idAlbum = song.getAlbumSongIsOn().getId();
 		if(result.hasErrors())
 		{
-			return "/songs/newsong.jsp";    //is this the issue/?
+			viewModel.addAttribute("albums", this.aService.getAllAlbums());
+			return "/songs/newsong.jsp";    //is this the issue/?  ^^
 		}
 		this.sService.createSong(song);
 		return "redirect:/album_details/" + idAlbum;

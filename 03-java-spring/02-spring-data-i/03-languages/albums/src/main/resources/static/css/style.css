@@ -16,6 +16,46 @@
 	background:#78c551;
 	color: black;
 }
+/* MAKES IT LIKE A BUTTON */
+.aTagStyle
+{
+	color: black;
+	font-family: sans-serif;
+	text-decoration: none;
+	font-weight: bold;
+	display: inline-block;
+	border-radius: 50px;
+	border: 0px;
+	background: #78c551;
+	padding: 20px;
+	margin-left: 10px;
+	margin-right: 10px;	
+}
+
+/* FOR TABLES */
+#aTagSmallButtonStyle
+{
+	color: black;
+	text-decoration: none;
+	font-weight: light;
+	display: inline-block;
+	border-radius: 20px;
+	border: 0px;
+	background: #fea41c;
+	padding: 20px;
+	margin-left: 10px;
+	margin-right: 10px;	
+}
+
+.optionSelectorStyling
+{
+	padding: 20px;
+	margin: 20px;
+	color: white;
+	background: #4b4a4b;
+	border-radius: 50px;
+}
+
 
 .buttonStyleSideBySide 
 {
@@ -64,6 +104,8 @@
 	background: #feff00;
 	width: 25%;
 	padding: 20px;
+	padding-left: 40px;
+	padding-right: 40px;
 	border-radius: 20px 0px 0px 20px;
 	border: 0px;
 	font-weight: bold;
@@ -78,6 +120,8 @@
 	background: #feff00;
 	width: 25%;
 	padding: 20px;
+	padding-left: 150px;
+	padding-right: 150px;
 	border-radius: 0px 20px 20px 0px;
 	border: 0px;
 	font-weight: bold;
@@ -124,7 +168,6 @@
 	border-radius: 20px 0px 0px 20px;
 	border: 0px;
 	font-weight: bold;
-	/* margin: 20px; */
 	align-content: center;
 	text-align: center;
 }
@@ -132,17 +175,14 @@
 .rightSingleCell 
 {
 	background: #f5ff90;
-	width: 25%;
+	width: 1000px;
 	padding: 10px;
 	border-radius: 0px 20px 20px 0px;
 	border: 0px;
 	font-weight: bold;
-	/* margin-right: 20px; */
 	align-content: center;
 	text-align: center;
 }
-
-
 
 .entryContainer
 {
@@ -164,7 +204,7 @@
 	font-weight: bold;
 	margin: 20px;
 	display: inline-block;
-	align-content: center;
+	align-crgb(255, 255, 255)t: center;
 	text-align: center;
 }
 
@@ -196,13 +236,21 @@
 	text-align: center;
 }
 
+#spaceMe
+{
+	margin-right: 30px;	
+}
+
 #ittyBitty
 {
 	/* width: 80%; */
-	padding: 5%;
-	margin: 1px;
-	font-size: 9px;
-	color: black;
+	padding: 2%;
+	margin: 100px;
+	/* margin-left: 200px; */
+	font-size: 13px;
+	border-radius: 10px;
+	background: green;
+	color: #ffffff;
 	margin: 2px;
 	display: inline-block;
 	/* align-content: center;

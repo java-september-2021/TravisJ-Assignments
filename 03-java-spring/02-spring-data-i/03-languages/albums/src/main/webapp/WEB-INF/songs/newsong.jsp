@@ -10,9 +10,11 @@
 		<link rel="stylesheet" href="/css/style.css">
 	</head>
 	<body class="pagestyle">
+	
 		<div class="containerBasic">
 			<h1>Create New Song</h1>
 			<p>Please enter this basic info to get your new song created.</p>
+			<a class="aTagStyle" href="/"> Return Home </a>
 		</div>
 		
 	
@@ -45,14 +47,18 @@
 					<form:errors class="errorAlertPopupContainer" path="age"/> 
 					<form:input type="text" path="age" placeholder="Optional" class="entryContainer"/><br><br><br>
 				</div>
+				<div class="optionSelectContainer">
+				<p>Album:</p>
 				<!-- THIS IS HOW YOU CONNECT TO THE SONG AND ALBUM LINKING -->
 				<!-- ALLOW USER TO SELECT WHAT TO LINK THE SONG TO -->
-				<form:select path="albumSongIsOn">
+				<!-- ADD STYLE TO C select -->
+				<form:select class="optionSelectorStyling" path="albumSongIsOn">
 					<c:forEach items="${albums}" var="album">
-						<option value="${album.id}"> ${album.albumName} by ${album.artistName} </option>
+						<option  value="${album.id}"> ${album.albumName} by ${album.artistName} </option>
 					</c:forEach> 
 				</form:select>
 				<button class="buttonStyle">Add Song</button>
+				</div>
 			</form:form>
 		</div>
 		

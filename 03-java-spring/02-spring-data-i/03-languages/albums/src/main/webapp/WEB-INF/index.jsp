@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Albums</title>
+<title>Albums Home Page</title>
 <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -22,26 +22,24 @@
 			<p>The "Who's that" of the Music World.</p><br>
 			
 			<!-- THIS ALLOWS THE BUTTON TO TAKE YOU TO THE CREATE PAGE -->
-			<!-- CHANGE FROM FORUM TO HYPERLINK THEN STYLE -->
 			
-			<!-- THIS IS THE LINK FOR HTML SETTING -->
-			<%-- <a href ></a>
-			
-			<form action="/newalbumHTMLadd">	
+			<%-- <form action="/newalbumHTMLadd">	
 				<button class="buttonStyleSideBySide">Create New Album HTML Form</button>
 			</form><br> --%>
 			
 		<!-- 	STILL WONT WORK -->
 			<!-- <a href="/newalbumHTMLadd"> A TAG LINK TO SAME PLACE </a> -->
 			
-			<form action="/newalbum">	
-				<button class="buttonStyleSideBySide">Create New Album Spring MVC</button>
-			</form>
-			<!-- REMEMBER THIS HAS ITS OWN CONTROLLER WITH /song/ beginning -->
-			<form action="/songs/createnewsong">	
-				<button class="buttonStyleSideBySide">Create New Song</button>
-			</form>
+			<a class="aTagStyle" href="/newalbum"> Create New Album </a>
+			<a class="aTagStyle" href="/songs/createnewsong"> Add New Song </a>
 			
+				<%-- <form action="/newalbum">	
+					<button class="buttonStyleSideBySide">Create New Album Spring MVC</button>
+				</form>
+				<!-- REMEMBER THIS HAS ITS OWN CONTROLLER WITH /song/ beginning -->
+				<form action="/songs/createnewsong">	
+					<button class="buttonStyleSideBySide">Create New Song</button>
+				</form> --%>
 		</div>
 		
 		<table class="tableContainerBasic">
@@ -51,15 +49,14 @@
 					<th class="centerTableHeader">Album Name</th>
 					<th class="centerTableHeader">Band Name</th>
 					<th class="centerTableHeader">Year</th>
-					<th class="rightTableHeader">More Info</th>
+					<th class="rightTableHeader">Options</th>
 				</tr>
 				
 				<!-- THIS CHECKS IF THE DATA WAS ENTERED -->
 							<!-- THIS IS THE IF checker if its NULL -->
 							
 							<!--
-							 SET COLOR PRIORITYS BASED ON WAHT IS ENTERED
-							 Check the referenced VAR is 
+							 SET COLOR PRIORITYS BASED ON WAHT IS ENTERED Check the referenced VAR is 
 							-->
 							
 							<!-- USE THIS WHEN YOU WANT IT EMPTY -->
@@ -69,7 +66,8 @@
 						    <!-- DONT COMMENT WITHIN THE CHOOSE -->
 				<c:forEach items="${allAlbums}" var="album">
 					<tr class="tableContainerBasic">
-						<td class="leftSingleCell">${album.id} 
+						<td class="leftSingleCell">
+							<a>${album.id}</a>
 						    <c:choose>
 						    	<c:when test="${album.createdAt == null}"> 
 						    		<p id="ittyBitty">Date Added: No Date Given</p>			   
@@ -79,12 +77,15 @@
 						    		<p id="ittyBitty">Date Added: ${album.createdAt}</p>
 						    	</c:otherwise>
 						    </c:choose>
-						    
+						</td>   
 						<td class="singleCell">${album.albumName}</td>
 						<td class="singleCell">${album.artistName}</td>
 						<td class="singleCell">${album.year}</td>
 						<!-- DETAIL LINK -->
-						<td class="rightSingleCell"><a href="album_details/${album.id}">All Details</a></td>
+						<td class="rightSingleCell">
+							<a id="aTagSmallButtonStyle" href="edit/${album.id}">Edit</a>
+							<a id="aTagSmallButtonStyle" href="album_details/${album.id}">View Details</a>
+						</td>
 					</tr>
 				</c:forEach>
 			</thead>

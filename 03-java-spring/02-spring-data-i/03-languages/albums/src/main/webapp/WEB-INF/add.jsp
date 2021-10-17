@@ -15,9 +15,11 @@
 <!--  THIS IS WHERE THE USER WILL ADD ALL added DATA IS VALIDATED through the MODELS package
 In this case Album.java -->
 	<body class="pagestyle">
+	
 		<div class="containerBasic">
 			<h1>Create New Album</h1>
 			<p>Please enter this basic info to get your new album created.</p>
+			<a class="aTagStyle" href="/"> Return Home </a>
 		</div>
 		
 		<div class="containerSideBySide">

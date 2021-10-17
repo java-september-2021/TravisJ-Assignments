@@ -30,6 +30,7 @@
 				</c:otherwise>
 			</c:choose>
 			
+			<a class="aTagStyle" href="/"> Return Home </a>
 			
 			<%-- <form action="/newalbum">	
 				<button class="buttonStyleSideBySide">Create New Album Spring MVC</button>
