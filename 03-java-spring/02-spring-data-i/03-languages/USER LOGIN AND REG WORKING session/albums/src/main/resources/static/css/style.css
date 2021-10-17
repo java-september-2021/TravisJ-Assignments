@@ -82,7 +82,18 @@
 	text-align: center;
 }
 
-
+.newUserContainer
+{
+	background: #9ed4f6;
+	padding: 20px;
+	border-radius: 50px;
+	border: 0px;
+	font-weight: bold;
+	margin: 20px;
+	/* display: flex; */
+	align-content: center;
+	text-align: center;
+}
 
 /* MOD TABLE CELLS */
 

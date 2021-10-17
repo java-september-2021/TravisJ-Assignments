@@ -57,6 +57,15 @@ public class HomeController
 		return "redirect:/homepage";  //ONCE CHECK IS COMPLETE THROUGH @PostMapping User login call out the /homepage to actually take them there
 	}
 	
+	// Log user out
+	@GetMapping("/userlogoff")
+	public String logout(HttpSession session)
+		{					
+			session.invalidate();
+			//     Make a logout page eventually, "You have logged off successfully."         
+			return "redirect:/";
+		}
+	
 	// THis is now primarially called through redirects
 	// only real change is from / to /homepage and it gets the all albums part
 	@GetMapping("/homepage")

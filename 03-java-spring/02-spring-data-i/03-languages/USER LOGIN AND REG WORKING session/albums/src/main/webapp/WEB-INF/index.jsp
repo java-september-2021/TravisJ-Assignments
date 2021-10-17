@@ -32,6 +32,7 @@
 			
 			<a class="aTagStyle" href="/newalbum"> Create New Album </a>
 			<a class="aTagStyle" href="/songs/createnewsong"> Add New Song </a>
+			<a class="aTagStyle" href="/userlogoff"> Secure Sign Out </a>
 			
 				
 			

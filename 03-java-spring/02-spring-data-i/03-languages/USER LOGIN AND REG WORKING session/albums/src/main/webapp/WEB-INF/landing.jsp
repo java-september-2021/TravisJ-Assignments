@@ -21,37 +21,32 @@
 	</div>
 	
 	<div class="containerBasic">
-		<h1>New User</h1>
-		<p>Sign up today!</p>
-			
-		<!-- THIS IS WHERE A ALREADY CREATED USER CAN LOG IN -->
-		<!-- THIS IS A TEMP LOGIN SOLUTION -->
-		<!-- USE ONLY FOR BUILD TESTING WITH ACCESS LEVELS PRESET. -->
-		<!-- SET TO userlogin as action for next -->
-		<form method="POST" action="/userlogin">
-			<select class="optionSelectorStyling" name="registeredUsers">
-			<c:forEach items="${allUsers}" var="user"> 
-			<option value="${user.id}">${user.firstName} ${user.lastName}</option>
-			</c:forEach>
-			</select>
-			<button class="buttonStyle">Quick Tester Login</button>
-		</form>	
-			
-			
-			
-			
-			
-			
-			
-			
-			<%-- <form:form action="/registeruser" method="post" modelAttribute="user">
+		<div class="newUserContainer">	
+			<h1>New User</h1>
+			<p>Sign up today!</p>
+				
+			<!-- THIS IS WHERE A ALREADY CREATED USER CAN LOG IN -->
+			<!-- THIS IS A TEMP LOGIN SOLUTION -->
+			<!-- USE ONLY FOR BUILD TESTING WITH ACCESS LEVELS PRESET. -->
+			<!-- SET TO userlogin as action for next -->
+			<form method="POST" action="/userlogin">
+				<select class="optionSelectorStyling" name="registeredUsers">
+				<c:forEach items="${allUsers}" var="user"> 
+				<option value="${user.id}">${user.firstName} ${user.lastName}</option>
+				</c:forEach>
+				</select>
+				<button class="buttonStyle">Quick Tester Login</button>
+			</form>
+			</div>
+	</div>
+	
+	<%-- <form:form action="/registeruser" method="post" modelAttribute="user">
 				<div>
 					<form:label path="firstName">First Name</form:label> <!-- COSMETIC TEXT -->
 					<form:errors path="firstName"/>
 					<form:input path="firstName"/>
 				</div>
 			</form:form> --%>
-	</div>
 	
 	</body>
 </html>
