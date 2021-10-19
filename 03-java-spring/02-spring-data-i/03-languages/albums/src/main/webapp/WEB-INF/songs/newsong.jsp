@@ -14,7 +14,7 @@
 		<div class="containerBasic">
 			<h1>Create New Song</h1>
 			<p>Please enter this basic info to get your new song created.</p>
-			<a class="aTagStyle" href="/"> Return Home </a>
+			<a class="aTagStyle" href="/homepage"> Return Home </a>
 		</div>
 		
 	

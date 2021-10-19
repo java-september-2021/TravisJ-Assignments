@@ -18,8 +18,40 @@ public interface AlbumRepository  extends CrudRepository< Album , Long>   // THI
 {
 	// REMEMBER TO IMPORT THIS AS => java.util.List
 	// JPA translates this into SQL queries, its super good at filtering
+	
 	List<Album> findAll(); // Just like SELECT * FROM albums in SQL
 	
+	
+	
+	// HIDDEN HERE AND IN ALBUM SERVICE HOW TO FIX AND IMPLIMENT!?
+	//
+	// in lecture he does not have this linked but this ruined my whole app?! 
+	//
+	// ** HOLD ** UP **
+	//
+	//
+	//  Add search functionallity Just like in JPA queries => DAY 9 LEC 1:15
+	//
+	// THIS IS SUPER POWERFUL.  check the jpa.query methods
+	//
+	// connects with albumName => in Album.java
+	// super helpful searching for a TEXT field!
+	//List<Album> findByAlbumNameContaining(String containing);
+	
+	// HOW TO SEARCH FOR ALBUMS with NUMBER
+	// connects with year => in Album.java
+	//List<Album> findByYearContaining(Integer containing);
+	
+	//
+	// Organize Albums
+	//
+	// findByOrderBy // Desc or Asc
+	//List<Album> findByOderByYearDesc(Integer containing);
+	
+	//
+	// Check albumName if an entry exists
+	//
+	//boolean existsByAlbumName(String albumName);
 	//
 	//
 	//  RETREVAL DOES NOT HAPPEN HERE => thats in .services

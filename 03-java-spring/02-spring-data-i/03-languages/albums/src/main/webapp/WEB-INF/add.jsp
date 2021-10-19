@@ -19,7 +19,7 @@ In this case Album.java -->
 		<div class="containerBasic">
 			<h1>Create New Album</h1>
 			<p>Please enter this basic info to get your new album created.</p>
-			<a class="aTagStyle" href="/"> Return Home </a>
+			<a class="aTagStyle" href="/homepage"> Return Home </a>
 		</div>
 		
 		<div class="containerSideBySide">
@@ -40,7 +40,6 @@ In this case Album.java -->
 				<button class="buttonStyle">Add Album</button>
 			</form>
 		</div>
-		
 		
 		<!-- action is the newalbum -->
 		<!-- NOTE the ** MODEL attribute ** add and  ** form:form ** -->

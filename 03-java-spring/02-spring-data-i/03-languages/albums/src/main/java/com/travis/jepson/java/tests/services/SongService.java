@@ -20,12 +20,11 @@ public class SongService
 	private SongRepository sRepo; 
 	
 	// ALWAYS use Java.Util
-	// CHECK WHAT WENT WRONG
-	//
-//	public List<Song> getAllSongs()
-//	{
-//		return this.sRepo.findAll();	// uses the aRepo to connect
-//	}
+	// USE TO CONNECT AND IMPORT WITH sSERVICE in home controller woo wooooo
+	public List<Song> getAllSongs()
+	{
+		return this.sRepo.findAll();	// uses the aRepo to connect
+	}
 	
 	// Get one album from the database and return as an array list
 		//

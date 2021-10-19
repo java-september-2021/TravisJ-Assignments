@@ -12,6 +12,9 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
@@ -91,7 +94,35 @@ public class Album
 	private Date updatedAt;
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-	// LINK TO SONGS
+	// LINK TO USERS => LIKES
+	// Songs.java is a child to this class
+	// MAKE SURE ITS => java.util.list
+	// when making a song object it lives in the album
+		
+	// mappedBy MAKES ASSOCIATIONS BETWEEN TWO MODELS THIS ATTRIBUTE MAKES IT CONNECT
+	// connection point => albumSongIsOn
+	// cascade will allow the songs to be deleted when the album is deleted.
+	// the fetch type will only load these when it is requested  // EAGER will auto-load
+	
+	// VV taken from album.java  MAKE SURE TO FLIP THE TABLES
+	@ManyToMany(fetch=FetchType.LAZY)
+	@JoinTable(
+			name="album_likes",  // ref link name
+			joinColumns = @JoinColumn(name="album_id"), // FLIP THIS
+			inverseJoinColumns = @JoinColumn(name="user_id") //  FLIP THIS
+			)
+	private List<User> likers;  // this makes the whole list of albums the user likes
+								// likers stores all users
+	// ^^ adding the like button references this in the AlbumService.java
+	
+	
+	// DONT FORGET TO GENERATE THE GETTERS AND SETTERS FOR THIS
+	
+	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	
+	
+	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	// LINK TO => SONGS
 	// Songs.java is a child to this class
 	// MAKE SURE ITS => java.util.list
 	// when making a song object it lives in the album
@@ -102,11 +133,7 @@ public class Album
 	// the fetch type will only load these when it is requested  // EAGER will auto-load
 	@OneToMany(mappedBy="albumSongIsOn", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	private List<Song> songs;
-	
-	
-	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-	
 	
 	//CALL BACK METHOD this gets triggered and calls back to what it was
 	// doing beforehand it was set up
@@ -130,6 +157,14 @@ public class Album
 	public Album()
 	{
 		
+	}
+	
+	// Likers getter and setter
+	public List<User> getLikers() {
+		return likers;
+	}
+	public void setLikers(List<User> likers) {
+		this.likers = likers;
 	}
 	
 	// THIS IS THE GENERATED CONSTRUCTOR * * *

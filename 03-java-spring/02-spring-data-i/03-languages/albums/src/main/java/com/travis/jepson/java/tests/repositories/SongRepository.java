@@ -19,8 +19,8 @@ public interface SongRepository  extends CrudRepository< Song , Long>   // THIS 
 	// REMEMBER TO IMPORT THIS AS => java.util.List
 	// JPA translates this into SQL queries, its super good at filtering
 	
-//	DONT NEED THIS *** 
-//	List<Song> findAll(); // Just like SELECT * FROM albums in SQL
+//	DO NEED, MAKE SURE TO CONNECT WITH THE SONG.SERVICE
+	List<Song> findAll(); // Just like SELECT * FROM albums in SQL
 	
 	//
 	//

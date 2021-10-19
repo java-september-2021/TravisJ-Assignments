@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.travis.jepson.java.tests.models.Album;
+import com.travis.jepson.java.tests.models.User;
 import com.travis.jepson.java.tests.repositories.AlbumRepository;
 
 //
@@ -75,6 +76,42 @@ public class AlbumService
 		this.aRepo.deleteById(id);	// uses the aRepo to connect
 		return "Album has been deleted. FOREVER";
 	}
+	
+	// LIKE an ALBUM
+	// THIS WILL BE CALLED IN THE HOME CONTROLLER
+	public void likeAlbum(User user, Album album)
+	{
+		List<User> usersThatLikedAlbum = album.getLikers();
+		usersThatLikedAlbum.add(user); //ADD USER
+		this.aRepo.save(album);  //SAVE TO ALBUM
+	}
+	
+	// UNLIKE an ALBUM
+		// THIS WILL BE CALLED IN THE HOME CONTROLLER
+		public void unlikeAlbum(User user, Album album)
+		{
+			List<User> usersThatLikedAlbum = album.getLikers();
+			usersThatLikedAlbum.remove(user); //remove USER  // use .remove
+			this.aRepo.save(album);  //SAVE TO ALBUM
+		}
+	
+	
+//	public List<Album> findByAlbumNameContaining()
+//	{
+//		return this.aRepo.findAll();
+//	}
+//	public List<Album> findByYearContaining()
+//	{
+//		return this.aRepo.findAll();
+//	public List<Album> findByOderByYearDesc()
+//	{
+//		return this.aRepo.findAll();
+//	}
+//	public List<Album> existsByAlbumName()
+//	{
+//		return this.aRepo.findAll();
+//	}
+//	
 	
 	
 	

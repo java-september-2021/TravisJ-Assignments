@@ -8,14 +8,23 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="/css/style.css">
-	<title> ${albumDetails.albumName} Album Details</title>
+	<title>${albumDetails.albumName} Album Details</title>
 </head>
 	<body class="pagestyle">
 	
 		<div class="containerBasic">
 			<p>Album:</p>
-			<h1>${albumDetails.albumName}</h1>
-			
+			<h1>${albumDetails.albumName}</h1> 
+			<div class="likedContainer">	
+				<p id="ittyBittyLikes">Total Likes: ${albumDetails.likers.size()} </p> <!--  TOTAL LIKES IN ARRAY LIST -->
+				<h2>Liked By:</h2>
+				<ul>
+				<!-- IN THIS CASE THIS IS user because it is not associated with STATE -->
+					<c:forEach items="${albumDetails.likers}" var="user">
+						<li>${user.firstName} ${user.lastName}</li>
+					</c:forEach>
+				</ul>
+			</div>
 			<p>Official Name: ${albumDetails.albumName}</p>
 			<p>Band or Artist: ${albumDetails.artistName}</p>
 			<p>Year Released: ${albumDetails.year}</p>
@@ -30,7 +39,7 @@
 				</c:otherwise>
 			</c:choose>
 			
-			<a class="aTagStyle" href="/"> Return Home </a>
+			<a class="aTagStyle" href="/homepage"> Return Home </a>
 			
 			<%-- <form action="/newalbum">	
 				<button class="buttonStyleSideBySide">Create New Album Spring MVC</button>
@@ -88,7 +97,7 @@
 						 <!-- ifPresent??? -->
 						<c:choose>
 						    	<c:when test="${empty song.age}"> 
-						    		<td class="rightSingleCell">No Date Given</td>			   
+						    		<td class="rightSingleCell">No Age Given</td>			   
 						    	</c:when>
 						    	<c:otherwise> 
 						    		<td class="rightSingleCell">${song.age}</td>

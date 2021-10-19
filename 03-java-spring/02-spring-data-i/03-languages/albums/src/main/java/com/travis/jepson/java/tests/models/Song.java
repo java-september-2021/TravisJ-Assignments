@@ -89,7 +89,6 @@ public class Song
 	// THIS IS OPTIONAL!!!!! ***  Integer or NULL
 	//
 	@Column(nullable=true)  // this can be NULL  // Nullable
-	// REMOVE FOR NOW...
 	@Max(value=100, message="Please enter an age less than 100.")
 	@Min(value=30, message="Please enter an age over 29.")
 //	@Range(min=18, max=30, message="Please enter an album name between 4-200 characters.")

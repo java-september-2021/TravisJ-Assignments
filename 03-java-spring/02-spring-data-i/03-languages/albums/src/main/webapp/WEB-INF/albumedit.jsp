@@ -36,7 +36,7 @@
 					<form:input type="text" path="year" placeholder="Year Released" class="entryContainer"/><br><br>
 				</div>
 				<button class="buttonStyle">Update Album</button>
-				<a class="aTagStyle" href="/"> Cancel Changes </a>
+				<a class="aTagStyle" href="/homepage"> Cancel Changes </a>
 			</form:form> 
 			
 		</div>

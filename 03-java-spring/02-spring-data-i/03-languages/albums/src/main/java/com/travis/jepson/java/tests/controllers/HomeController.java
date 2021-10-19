@@ -1,5 +1,6 @@
 package com.travis.jepson.java.tests.controllers;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.travis.jepson.java.tests.models.Album;
+import com.travis.jepson.java.tests.models.User;
 import com.travis.jepson.java.tests.services.AlbumService;
+import com.travis.jepson.java.tests.services.SongService;
+import com.travis.jepson.java.tests.services.UserService;
 
 //
 // Made through adding a new => CLASS
@@ -26,10 +30,44 @@ public class HomeController
 	@Autowired
 	private AlbumService aService;  // dependancy injected with aService USE OFTEN
 	
+	// Allow for login and REG
+	@Autowired
+	private UserService uService;
+	
+	@Autowired
+	private SongService sService;
 	//
 	// set as private final if you want a declaration to NEVER be changed
 	// IE private final String albumName = "l33ts";  this would make the 
 	// album name 133ts never be able to be changed
+	
+	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+	// INITIAL LOGIN - WEBSITE LOGIN
+		// needs all available users to allow them to log in
+		// connects to uService and gets all the users
+		// NOW THIS PAGE TAKES IN MODEL ATTRIBUTE
+	@GetMapping("/")
+	public String index(@ModelAttribute("user") User user)
+		{							
+			return "landing.jsp";
+		}
+	
+	// connects to the JSTL form on landing
+	// works with the UserService bcrypt
+	@PostMapping("/registerNewUser")
+	public String register(@Valid @ModelAttribute("user") User user, BindingResult result, HttpSession session)
+	{
+		if(result.hasErrors())
+		{
+			return "landing.jsp";
+		}					// in UserService VV
+		User newUserSigningUp = this.uService.registerNewUser(user);  // saves in DB, now has primary key
+		session.setAttribute("user__id", newUserSigningUp.getId());
+		return "redirect:/homepage"; 
+	}
+	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 	
 	
 	// use MODEL to get from back end to front end!
@@ -37,13 +75,75 @@ public class HomeController
 	//
 	//  THIS IS WHAT WE LOOP THROUGH FOR THE DISPLAY
 	//  allAlbums is what we use to access all ATTRIBUTES
+	//	
+	//  THIS IS THE NEW HOMEPAGE
 	//
-	@GetMapping("/")
-	public String index(Model viewModel)
-		{
+	//	THE POSTMAPPING ALLOWS FOR THE LOGIN AND SESSION TO BE LINKED
+	//
+	@PostMapping("/userlogin")		// THIS IS DEFINED ON THE landing.jsp VV then same as the Long id attribute
+	public String login(HttpSession session, @RequestParam("registeredUsers") Long registeredUserIdCheck)
+	{
+		// THIS IS WHERE YOU VALIDATE then starts the session
+		// MAKE SURE THE SESSION ID IS DISTINCT from other IDs
+		// ***  REMEMBER SESSION ID is different then user.id  ***
+		session.setAttribute("user__id", registeredUserIdCheck);
+		return "redirect:/homepage";  //ONCE CHECK IS COMPLETE THROUGH @PostMapping User login call out the /homepage to actually take them there
+	}
+	
+	// Log user out
+	@GetMapping("/userlogoff")
+	public String logout(HttpSession session)
+		{					
+			session.invalidate();
+			//     Make a logout page eventually, "You have logged off successfully."         
+			return "redirect:/";
+		}
+	
+	// THis is now primarially called through redirects
+	// only real change is from / to /homepage and it gets the all albums part
+	//
+	// THIS STATE IS THE USER LOGGED IN => THIS IS CALLED userLoggedIn
+	@GetMapping("/homepage")
+	public String landing(Model viewModel, HttpSession session)
+		{					
+			// NOW WE MUST PROTECT THE LOGIN PAGE FROM UNWANTED PPL
+			// this protects from unregistered users
+			if(session.getAttribute("user__id") == null)
+			{
+				return "redirect:/";  // if cred fails return to main page *** ALL THROUGH SESSION ***
+			}
+			//                         V userLoggedIn.attribute from User.java  V-- Dont forget long         
+			viewModel.addAttribute("userLoggedIn", this.uService.getOneUser((Long)session.getAttribute("user__id")));   // THIS WILL HELP UI display logged in User.java class attributes
 			viewModel.addAttribute("allAlbums", this.aService.getAllAlbums());
+			viewModel.addAttribute("allSongs", this.sService.getAllSongs());  // ADD SO YOU CAN HAVE TOTAL SONGS
 			return "index.jsp";
 		}
+	
+	
+	// Add a LIKE => USER => LIKES => Album
+	@GetMapping("/like/{id}")
+	public String albumLike(@PathVariable("id") Long id, HttpSession session)
+	{															//	user session id V
+		User userToLikeAlbum = this.uService.getOneUser((Long)session.getAttribute("user__id"));
+		Album albumToLike = this.aService.getOneAlbum(id);
+		// ADD THIS IN ALBUM SERVICE
+		// check album service for these variables
+		this.aService.likeAlbum(userToLikeAlbum, albumToLike);
+		return "redirect:/homepage";
+	}
+	
+	// Removes a LIKE => USER => UNLIKE => Album
+	@GetMapping("/unlike/{id}")
+	public String albumUnlike(@PathVariable("id") Long id, HttpSession session)
+	{															//	user session id V
+		User userToLikeAlbum = this.uService.getOneUser((Long)session.getAttribute("user__id"));
+		Album albumToUnlike = this.aService.getOneAlbum(id);
+		// ADD THIS IN ALBUM SERVICE
+		// check album service for these variables
+		this.aService.unlikeAlbum(userToLikeAlbum, albumToUnlike);   //THis removes
+		return "redirect:/homepage";
+	}
+	
 	
 	//
 	// This is how you add an album * * * HTML forum * * *
@@ -72,7 +172,7 @@ public class HomeController
 		{
 		Album albumToSave = new Album(album, artist, year);   // constructor template
 		this.aService.createAlbum(albumToSave);
-		return "redirect:/";
+		return "redirect:/homepage";
 		}
 	
 	
@@ -100,7 +200,7 @@ public class HomeController
 			return "albumedit.jsp";
 		}
 		this.aService.editAlbum(album);
-		return "redirect:/";
+		return "redirect:/homepage";
 	}
 	
 	//
@@ -130,7 +230,7 @@ public class HomeController
 				}
 				// IF NO ERRORS THEN THIS IS MADE!
 				this.aService.createAlbum(album);
-				return "redirect:/";
+				return "redirect:/homepage";
 			}
 		
 		// THIS LINKS THE DETAIL PAGE FOR ALBUMS
