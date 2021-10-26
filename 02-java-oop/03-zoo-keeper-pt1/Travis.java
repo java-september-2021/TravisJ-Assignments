@@ -3,7 +3,7 @@
 
 //ABSTRACT - this is the blueprint for ALL HUMANS outside the mamal class?
 // CONNECTS TO human ABSTRACT CLASS
-// TRAVIS IS THE OBJECT that COMES OFF THE HUMAN OBJECT
+// TRAVIS IS THE CLASS that ENHERITS OFF THE HUMAN OBJECT attributes
 public class Travis extends Human
 {
     
